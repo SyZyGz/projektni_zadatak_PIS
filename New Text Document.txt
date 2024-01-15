@@ -1,0 +1,550 @@
+package com.asss.pj.ParfimerijaShop;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ParfimerijaShop1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ParfimerijaShop1Application.class, args);
+	}
+
+}
+
+
+---------------------------------------
+package com.asss.pj.ParfimerijaShop;
+
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+
+public class ServletInitializer extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(ParfimerijaShop1Application.class);
+	}
+
+}
+---------------------------------
+
+package com.asss.pj.ParfimerijaShop.KategorijaProizvoda;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class KategorijaProizvoda {
+    @Id
+    private int id;
+    private String ime_proizvoda;
+    private String opis_proizvoda;
+    private float cena;
+    private int dostupnost_proizvoda;
+    private int zalihe;
+
+    public KategorijaProizvoda() {
+
+    }
+    public int getZalihe() {
+        return zalihe;
+    }
+
+    public void setZalihe(int zalihe) {
+        this.zalihe = zalihe;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getIme_proizvoda() {
+        return ime_proizvoda;
+    }
+
+    public void setIme_proizvoda(String ime_proizvoda) {
+        this.ime_proizvoda = ime_proizvoda;
+    }
+
+    public String getOpis_proizvoda() {
+        return opis_proizvoda;
+    }
+
+    public void setOpis_proizvoda(String opis_proizvoda) {
+        this.opis_proizvoda = opis_proizvoda;
+    }
+
+    public float getCena() {
+        return cena;
+    }
+
+    public void setCena(float cena) {
+        this.cena = cena;
+    }
+
+    public int getDostupnost_proizvoda() {
+        return dostupnost_proizvoda;
+    }
+
+    public void setDostupnost_proizvoda(int dostupnost_proizvoda) {
+        this.dostupnost_proizvoda = dostupnost_proizvoda;
+    }
+
+    public KategorijaProizvoda(int id, String ime_proizvoda, String opis_proizvoda, float cena, int dostupnost_proizvoda) {
+        this.id = id;
+        this.ime_proizvoda = ime_proizvoda;
+        this.opis_proizvoda = opis_proizvoda;
+        this.cena = cena;
+        this.dostupnost_proizvoda = dostupnost_proizvoda;
+    }
+}
+---------------------------------------------
+package com.asss.pj.ParfimerijaShop.KategorijaProizvoda;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.web.bind.annotation.*;
+
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+public class KategorijaProizvodaController {
+
+    @Autowired
+    KategorijaProizvodaService kategorijaProizvodaService;
+
+    @RequestMapping("/parfemi")
+    public List<KategorijaProizvoda> getParfemi() {
+        return kategorijaProizvodaService.getAllParfemi();
+    }
+
+    @RequestMapping("/parfemi/{id}")
+    public Optional<KategorijaProizvoda> getParfemiById(@PathVariable int id) {
+        return kategorijaProizvodaService.getParfemiById(id);
+    }
+
+    @RequestMapping(method = RequestMethod.POST,  value = "/parfemi")
+    public void addParfemiById(@RequestBody KategorijaProizvoda c) {
+
+        kategorijaProizvodaService.addParfemiById(c);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT,  value = "/parfemi")
+    public void updateParfemiByID( @RequestBody KategorijaProizvoda c) {
+        kategorijaProizvodaService.updateParfemi(c);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE,  value = "/parfemi/{id}")
+    public void removeParfemiByID(@PathVariable  int id) {
+        kategorijaProizvodaService.removeParfemiById(id);
+    }
+
+}
+-----------------------------------
+package com.asss.pj.ParfimerijaShop.KategorijaProizvoda;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface KategorijaProizvodaRepository extends JpaRepository<KategorijaProizvoda, Integer> {
+   
+}
+--------------------------------
+package com.asss.pj.ParfimerijaShop.KategorijaProizvoda;
+
+import com.asss.pj.ParfimerijaShop.Korisnik.Korisnik1;
+import com.asss.pj.ParfimerijaShop.Korisnik.Narudzba;
+import com.asss.pj.ParfimerijaShop.Korisnik.NarudzbaRepository;
+import com.asss.pj.ParfimerijaShop.Korisnik.Proizvod;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class KategorijaProizvodaService {
+
+    private static final int MINIMALNI_NIVO_ZALIHA = 10;
+    @Autowired
+    KategorijaProizvodaRepository kategorijaProizvodaRepository;
+    @Autowired
+    private NarudzbaRepository narudzbaRepository;
+
+    public KategorijaProizvodaService() {
+        super();
+    }
+
+    private static ArrayList<KategorijaProizvoda> parfemi = null;
+
+    public List<KategorijaProizvoda> getAllParfemi() {
+        return kategorijaProizvodaRepository.findAll();
+    }
+
+    public Optional<KategorijaProizvoda> getParfemiById(int id) {
+        return kategorijaProizvodaRepository.findById(id);
+    }
+
+    public void addParfemiById(KategorijaProizvoda c) {
+        kategorijaProizvodaRepository.save(c);
+    }
+
+    public void  updateParfemi ( KategorijaProizvoda c) {
+
+        kategorijaProizvodaRepository.save(c);
+    }
+
+        public void removeParfemiById(int id){
+            kategorijaProizvodaRepository.deleteById(id);
+
+        }
+    public void obradiNarudzbu(Narudzba narudzba) {
+        for (KategorijaProizvoda proizvod : narudzba.getProizvodi()) {
+            proizvod.setZalihe(proizvod.getZalihe() - 1);
+            kategorijaProizvodaRepository.save(proizvod);
+
+            if (proizvod.getZalihe() < MINIMALNI_NIVO_ZALIHA) {
+                obavestiOZalihama(proizvod);
+            }
+        }
+    }
+
+    private void obavestiOZalihama(KategorijaProizvoda kategorijaProizvoda) {
+        // Implementacija logike za slanje obaveštenja
+        // Na primer, slanje email-a, SMS-a ili poruke sistema
+        System.out.println("Obaveštenje: Proizvod " + kategorijaProizvoda.getIme_proizvoda() + " zahteva dopunu zaliha.");
+    }
+
+    public void azurirajStatusNarudzbe(Long narudzbaId, String noviStatus) {
+        // Implementacija ažuriranja statusa narudžbe
+        Optional<Narudzba> optionalNarudzba = narudzbaRepository.findById(narudzbaId);
+
+        if (optionalNarudzba.isPresent()) {
+            Narudzba narudzba = optionalNarudzba.get();
+            narudzba.setStatus(noviStatus);
+            narudzbaRepository.save(narudzba);
+        }
+    }
+
+
+    public void obrisiNarudzbu(Long narudzbaId) {
+        // Implementacija brisanja narudžbe
+        narudzbaRepository.deleteById(narudzbaId);
+    }
+
+
+}
+--------------------------
+-----------------------
+-----------------------------------
+package com.asss.pj.ParfimerijaShop.Korisnik;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Korisnik1 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String ime;
+    private String prezime;
+    private String email;
+    private String lozinka;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getIme() {
+        return ime;
+    }
+
+    public void setIme(String ime) {
+        this.ime = ime;
+    }
+
+    public String getPrezime() {
+        return prezime;
+    }
+
+    public void setPrezime(String prezime) {
+        this.prezime = prezime;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getLozinka() {
+        return lozinka;
+    }
+
+    public void setLozinka(String lozinka) {
+        this.lozinka = lozinka;
+    }
+
+}
+-------------------------------
+package com.asss.pj.ParfimerijaShop.Korisnik;
+
+import com.asss.pj.ParfimerijaShop.KategorijaProizvoda.KategorijaProizvoda;
+import com.asss.pj.ParfimerijaShop.Korisnik.Korisnik1;
+import jakarta.persistence.*;
+
+
+import java.util.List;
+
+@Entity
+public class Narudzba {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    private Korisnik1 korisnik;
+
+    @ManyToMany
+    private List<KategorijaProizvoda> proizvodi;
+
+    private float ukupnaCena;
+    private String status;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Korisnik1 getKorisnik() {
+        return korisnik;
+    }
+
+    public void setKorisnik(Korisnik1 korisnik) {
+        this.korisnik = korisnik;
+    }
+
+    public List<KategorijaProizvoda> getProizvodi() {
+        return proizvodi;
+    }
+
+    public void setProizvodi(List<KategorijaProizvoda> proizvodi) {
+        this.proizvodi = proizvodi;
+    }
+
+    public float getUkupnaCena() {
+        return ukupnaCena;
+    }
+
+    public void setUkupnaCena(float ukupnaCena) {
+        this.ukupnaCena = ukupnaCena;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
+}
+------------------------------
+package com.asss.pj.ParfimerijaShop.Korisnik;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/narudzbe")
+public class NarudzbaController {
+
+    @Autowired
+    private NarudzbaService narudzbaService;
+
+    @GetMapping
+    public List<Narudzba> getAllNarudzbe() {
+        return narudzbaService.getAllNarudzbe();
+    }
+
+    @GetMapping("/api/narudzbe/{id}")
+    public Optional<Narudzba> getNarudzbaById(@PathVariable Long id) {
+        return narudzbaService.getNarudzbaById(id);
+    }
+
+    @PostMapping
+    public void kreirajNarudzbu(@RequestBody Narudzba narudzba) {
+        narudzbaService.kreirajNarudzbu(narudzba);
+    }
+
+    // Dodajte metode za ažuriranje statusa narudžbe, brisanje narudžbe itd.
+}
+--------------------------------------
+package com.asss.pj.ParfimerijaShop.Korisnik;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface NarudzbaRepository extends JpaRepository<Narudzba, Long> {
+   
+}
+-----------------------------------
+package com.asss.pj.ParfimerijaShop.Korisnik;
+
+import com.asss.pj.ParfimerijaShop.KategorijaProizvoda.KategorijaProizvoda;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class NarudzbaService {
+
+    public NarudzbaService(){
+
+    }
+    @Autowired
+    private NarudzbaRepository narudzbaRepository;
+
+    public List<Narudzba> getAllNarudzbe() {
+        return narudzbaRepository.findAll();
+    }
+
+    public Optional<Narudzba> getNarudzbaById(Long id) {
+        return narudzbaRepository.findById(id);
+    }
+
+    public void kreirajNarudzbu(Narudzba narudzba) {
+        // Dodajte logiku za kreiranje narudžbe, npr. izračunavanje ukupne cene, ažuriranje dostupnosti proizvoda itd.
+        float ukupnaCena = 0;
+        for (KategorijaProizvoda korisnik1 : narudzba.getProizvodi()) {
+            ukupnaCena += korisnik1.getCena();
+            narudzbaRepository.save(narudzba);
+        }
+        narudzba.setUkupnaCena(ukupnaCena);
+
+        narudzbaRepository.save(narudzba);
+    }
+    public void azurirajStatusNarudzbe(Long id, String noviStatus) {
+        Optional<Narudzba> optionalNarudzba = narudzbaRepository.findById(id);
+        if (optionalNarudzba.isPresent()) {
+            Narudzba narudzba = optionalNarudzba.get();
+            narudzba.setStatus(noviStatus);
+            narudzbaRepository.save(narudzba);
+        }
+    }
+
+    public void obrisiNarudzbu(Long id) {
+        narudzbaRepository.deleteById(id);
+    }
+    // Dodajte metode za ažuriranje statusa narudžbe, brisanje narudžbe itd.
+
+
+}
+---------------------------------
+package com.asss.pj.ParfimerijaShop.Korisnik;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Proizvod {
+    @Id
+    private int id;
+    private String naziv;
+    private String opis;
+    private float cena;
+    private int dostupnaKolicina;
+
+    private int zalihe;
+
+    public Proizvod() {
+    	
+    }
+
+    public int getZalihe() {
+        return zalihe;
+    }
+
+    public void setZalihe(int zalihe) {
+        this.zalihe = zalihe;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNaziv() {
+        return naziv;
+    }
+
+    public void setNaziv(String naziv) {
+        this.naziv = naziv;
+    }
+
+    public String getOpis() {
+        return opis;
+    }
+
+    public void setOpis(String opis) {
+        this.opis = opis;
+    }
+
+    public float getCena() {
+        return cena;
+    }
+
+    public void setCena(float cena) {
+        this.cena = cena;
+    }
+
+    public int getDostupnaKolicina() {
+        return dostupnaKolicina;
+    }
+
+    public void setDostupnaKolicina(int dostupnaKolicina) {
+        this.dostupnaKolicina = dostupnaKolicina;
+    }
+
+    public Proizvod(int id, String naziv, String opis, float cena, int dostupnaKolicina) {
+        this.id = id;
+        this.naziv = naziv;
+        this.opis = opis;
+        this.cena = cena;
+        this.dostupnaKolicina = dostupnaKolicina;
+        this.zalihe = zalihe;
+    }
+}
+
