@@ -133,63 +133,30 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 var
-  lsDay, lsMonth, lsYear :string;
-  liDay, I : Integer;
-
-  //
-  dateFormat: string;
-
+  Fmt: TFormatSettings;
+  s: String;    // Declare the string variable s
+  d: TDateTime; // Declare the TDateTime variable d
 begin
+  Fmt := TFormatSettings.Create;
+  Fmt.ShortDateFormat := 'dd/mm/yyyy';
+  Fmt.DateSeparator := '/';
 
-  ListBox1.Items.Clear;
-  ListBox1.BeginUpdate;
-  // Set the date format to 'dd/mm/yyyy' for consistency
-  dateFormat := 'dd/mm/yyyy';
-  BeginDate := StrToDate(FormatDateTime(dateFormat, Date));
-  EndDate := IncMonth(BeginDate, 1) - 1;
-  lsDay := FormatDateTime('DD', EndDate);
-  lsMonth := FormatDateTime('MM', BeginDate);
-  lsYear := FormatDateTime('YYYY', BeginDate);
+  BeginDate := Date;  // Set BeginDate to today's date
 
-
-  //BeginDate := strtodate(FormatDateTime('01/MM/YYYY',Date));
- // EndDate   := incmonth(BeginDate,1)-1;
-  //lsDay := FormatDateTime('DD',EndDate);
-  //lsMonth := FormatDateTime('MM',BeginDate);
-  //lsYear := FormatDateTime('YYYY',BeginDate);
-
-
-  liDay := StrToInt(lsDay);
-
-  for I := 1 to liDay do
-    begin
-      ListboxItem                                           := TListBoxItem.Create(ListBox1);
-      ListboxItem.Parent                                    := ListBox1;
-      ListboxItem.CanFocus                                  := False;
-      ListboxItem.HitTest                                   := False;
-      ListboxItem.Height                                    := 50;
-      ListboxItem.Width                                     := 64;
-      ListboxItem.StyleLookup                               := 'ListBoxItem1Style1';
-      ListboxItem.Name                                      := 'Listboxdate' + IntToStr(ListboxItem.Index);
-      ListboxItem.Margins.Bottom                            := 0;
-      ListboxItem.Margins.Left                              := 0;
-      ListboxItem.Margins.Right                             := 0;
-      ListboxItem.Text                                      := IntToStr(I);
-
-      case DayOfWeek(StrToDate(IntToStr(i)+'/'+lsMonth+'/'+lsYear)) of
-        1 : ListboxItem.ItemData.Detail := 'Sun';
-        2 : ListboxItem.ItemData.Detail := 'Mon';
-        3 : ListboxItem.ItemData.Detail := 'Tue';
-        4 : ListboxItem.ItemData.Detail := 'Wed';
-        5 : ListboxItem.ItemData.Detail := 'Thu';
-        6 : ListboxItem.ItemData.Detail := 'Fri';
-        7 : ListboxItem.ItemData.Detail := 'Sat';
-      end;
-    end;
+  // Now let's say we want to work with BeginDate in a string format
+  try
+    s := FormatDateTime('dd/mm/yyyy', BeginDate, Fmt); // Convert BeginDate to string
+    if TryStrToDate(s, d, Fmt) then
+      BeginDate := d  // Re-assigning just for demonstration
+    else
+      ShowMessage('Failed to convert date: ' + s);
+  except
+    on E: Exception do
+      ShowMessage('Unexpected error: ' + E.Message);
+  end;
 
   ListBox1.EndUpdate;
 end;
-
 procedure TForm1.Label17Click(Sender: TObject);
 begin
   Close;

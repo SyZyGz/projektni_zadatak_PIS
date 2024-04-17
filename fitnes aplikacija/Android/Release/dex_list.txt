@@ -1,0 +1,7 @@
+c:\program files (x86)\embarcadero\studio\22.0\lib\android\Release\android-support-v4.dex.jar
+c:\program files (x86)\embarcadero\studio\22.0\lib\android\Release\cloud-messaging.dex.jar
+c:\program files (x86)\embarcadero\studio\22.0\lib\android\Release\fmx.dex.jar
+c:\program files (x86)\embarcadero\studio\22.0\lib\android\Release\google-analytics-v2.dex.jar
+c:\program files (x86)\embarcadero\studio\22.0\lib\android\Release\google-play-billing.dex.jar
+c:\program files (x86)\embarcadero\studio\22.0\lib\android\Release\google-play-licensing.dex.jar
+c:\program files (x86)\embarcadero\studio\22.0\lib\android\Release\google-play-services.dex.jar
