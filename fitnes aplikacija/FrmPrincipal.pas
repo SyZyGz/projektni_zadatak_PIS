@@ -1,12 +1,13 @@
 unit FrmPrincipal;
 
+
 interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
   FMX.Filter.Effects, FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls,
-  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView;
+  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView , Trening;
 
 type
 
@@ -21,7 +22,6 @@ type
     Rectangle3: TRectangle;
     GridPanelLayout1: TGridPanelLayout;
     FillRGBEffect1: TFillRGBEffect;
-    FillRGBEffect2: TFillRGBEffect;
     Layout6: TLayout;
     GridPanelLayout2: TGridPanelLayout;
     Line1: TLine;
@@ -45,14 +45,6 @@ type
     Label14: TLabel;
     Label15: TLabel;
     CalloutRectangle3: TCalloutRectangle;
-    ListBox1: TListBox;
-    ListBoxItem1: TListBoxItem;
-    ListBoxItem2: TListBoxItem;
-    ListBoxItem3: TListBoxItem;
-    ListBoxItem4: TListBoxItem;
-    ListBoxItem5: TListBoxItem;
-    ListBoxItem6: TListBoxItem;
-    ListBoxItem7: TListBoxItem;
     Line2: TLine;
     Line3: TLine;
     Layout14: TLayout;
@@ -87,12 +79,20 @@ type
     Rectangle9: TRectangle;
     Label16: TLabel;
     Label17: TLabel;
+    Proizvodi: TButton;
+    FloatAnimation1: TFloatAnimation;
+    Button5: TButton;
+    Trening: TButton;
+    Izlaz: TButton;
+    Button2: TButton;
     procedure FormShow(Sender: TObject);
     procedure Circle5Click(Sender: TObject);
     procedure FloatKeyAnimation1Finish(Sender: TObject);
     procedure FloatKeyAnimation2Finish(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Label17Click(Sender: TObject);
+    procedure IzlazClick(Sender: TObject);
+    procedure TreningClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -105,6 +105,8 @@ type
 
 var
   Form1: TForm1;
+  var
+  Form3Opened: Boolean = False;
 
 implementation
 
@@ -128,6 +130,8 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+if not Visible then
+
   MultiView1.HideMaster;
 end;
 
@@ -155,11 +159,29 @@ begin
       ShowMessage('Unexpected error: ' + E.Message);
   end;
 
-  ListBox1.EndUpdate;
 end;
+procedure TForm1.IzlazClick(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
 procedure TForm1.Label17Click(Sender: TObject);
 begin
   Close;
 end;
 
+procedure TForm1.TreningClick(Sender: TObject);
+begin
+
+   if not Assigned(Form3) then
+    Form3 := TForm3.Create(Self);
+
+  Form3Opened := True;
+
+  Hide;
+
+  Form3.Show;
+end;
+
 end.
+

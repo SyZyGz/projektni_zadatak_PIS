@@ -3,7 +3,8 @@ program fitnesAplikacijatest;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  FrmPrincipal in 'FrmPrincipal.pas' {Form1};
+  FrmPrincipal in 'FrmPrincipal.pas' {Form1},
+  Trening in 'Trening.pas' {Form3};
 
 {$R *.res}
 
