@@ -1,4 +1,4 @@
-unit FrmPrincipal;
+﻿unit FrmPrincipal;
 
 
 interface
@@ -7,7 +7,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
   FMX.Filter.Effects, FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls,
-  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView , Trening;
+  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView , Trening , Vezbe;
 
 type
 
@@ -93,6 +93,7 @@ type
     procedure Label17Click(Sender: TObject);
     procedure IzlazClick(Sender: TObject);
     procedure TreningClick(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -111,6 +112,15 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+// Provera da li je forma već kreirana
+  if not Assigned(vezbe1) then
+    vezbe1 := Tvezbe1.Create(Application);  // Kreiranje instance forme
+
+  vezbe1.Show;  // Prikazivanje forme
+end;
 
 procedure TForm1.Circle5Click(Sender: TObject);
 begin
