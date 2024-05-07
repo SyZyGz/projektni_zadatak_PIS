@@ -10,8 +10,10 @@ uses
 type
   Tvezbe1 = class(TForm)
     Image1: TImage;
-    Button1: TButton;
+    teretana: TButton;
     naslov: TLabel;
+    Button1: TButton;
+    Button2: TButton;
   private
     { Private declarations }
   public

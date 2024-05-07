@@ -2,8 +2,8 @@ object vezbe1: Tvezbe1
   Left = 0
   Top = 0
   Caption = 'Vezbe'
-  ClientHeight = 416
-  ClientWidth = 628
+  ClientHeight = 512
+  ClientWidth = 380
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -1746,27 +1746,53 @@ object vezbe1: Tvezbe1
         FileName = 'C:\Users\pc\OneDrive\Desktop\fitness app slike\images.jpg'
       end>
     Align = Client
-    Size.Width = 628.000000000000000000
-    Size.Height = 416.000000000000000000
+    Size.Width = 380.000000000000000000
+    Size.Height = 512.000000000000000000
     Size.PlatformDefault = False
-    object Button1: TButton
+    WrapMode = Stretch
+    object teretana: TButton
+      StyledSettings = [Family, Style, FontColor]
       Position.X = 64.000000000000000000
-      Position.Y = 144.000000000000000000
+      Position.Y = 176.000000000000000000
+      Size.Width = 233.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
       TabOrder = 0
-      Text = 'Button1'
+      Text = 'Trening u teretani'
+      TextSettings.Font.Size = 20.000000000000000000
     end
     object naslov: TLabel
       StyledSettings = [Family, Style]
-      Position.X = 48.000000000000000000
-      Position.Y = 8.000000000000000000
-      Size.Width = 577.000000000000000000
-      Size.Height = 65.000000000000000000
+      Size.Width = 369.000000000000000000
+      Size.Height = 145.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 48.000000000000000000
       TextSettings.FontColor = claWhite
       TextSettings.HorzAlign = Center
       Text = 'Izaberite tip treninga'
       TabOrder = 1
+    end
+    object Button1: TButton
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 64.000000000000000000
+      Position.Y = 336.000000000000000000
+      Size.Width = 233.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Kucni trening'
+      TextSettings.Font.Size = 20.000000000000000000
+    end
+    object Button2: TButton
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 64.000000000000000000
+      Position.Y = 256.000000000000000000
+      Size.Width = 233.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Trening u parku'
+      TextSettings.Font.Size = 20.000000000000000000
     end
   end
 end

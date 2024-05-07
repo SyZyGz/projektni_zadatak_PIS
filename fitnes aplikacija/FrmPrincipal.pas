@@ -85,6 +85,7 @@ type
     Trening: TButton;
     Izlaz: TButton;
     Button2: TButton;
+    Button3: TButton;
     procedure FormShow(Sender: TObject);
     procedure Circle5Click(Sender: TObject);
     procedure FloatKeyAnimation1Finish(Sender: TObject);
