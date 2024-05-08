@@ -7,7 +7,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
   FMX.Filter.Effects, FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls,
-  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView , Trening , Vezbe;
+  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView , Trening , Vezbe, Weight;
 
 type
 
@@ -95,6 +95,7 @@ type
     procedure IzlazClick(Sender: TObject);
     procedure TreningClick(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -113,6 +114,17 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+// Zatvaranje trenutne forme
+  Close;
+  // Kreiranje i prikazivanje nove forme
+       if not Assigned(dodavanjeTezine) then
+    dodavanjeTezine := TdodavanjeTezine.Create(Application);  // Kreiranje instance forme
+
+  dodavanjeTezine.Show;
+end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
