@@ -1,0 +1,38 @@
+unit Weight;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Memo.Types,
+  FMX.ScrollBox, FMX.Memo, FMX.Calendar, FMX.StdCtrls, FMX.Edit,
+  FMX.Controls.Presentation;
+
+type
+  TdodavanjeTezine = class(TForm)
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    Calendar1: TCalendar;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dodavanjeTezine: TdodavanjeTezine;
+
+implementation
+
+{$R *.fmx}
+
+procedure TdodavanjeTezine.Button1Click(Sender: TObject);
+begin
+// Logika za snimanje težine
+  Memo1.Lines.Add('Težina za datum ' + DateToStr(Calendar1.Date) + ' je ' + Edit1.Text + ' kg.');
+end;
+
+end.
