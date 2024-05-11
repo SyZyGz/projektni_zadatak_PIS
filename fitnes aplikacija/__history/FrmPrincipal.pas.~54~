@@ -45,6 +45,17 @@ type
     Label14: TLabel;
     Label15: TLabel;
     CalloutRectangle3: TCalloutRectangle;
+<<<<<<<< Updated upstream:fitnes aplikacija/__history/FrmPrincipal.pas.~54~
+========
+    ListBox1: TListBox;
+    ListBoxItem1: TListBoxItem;
+    ListBoxItem2: TListBoxItem;
+    ListBoxItem3: TListBoxItem;
+    ListBoxItem4: TListBoxItem;
+    ListBoxItem5: TListBoxItem;
+    ListBoxItem6: TListBoxItem;
+    ListBoxItem7: TListBoxItem;
+>>>>>>>> Stashed changes:fitnes aplikacija/__history/FrmPrincipal.pas.~24~
     Line2: TLine;
     Line3: TLine;
     Layout14: TLayout;
@@ -79,20 +90,26 @@ type
     Rectangle9: TRectangle;
     Label16: TLabel;
     Label17: TLabel;
+<<<<<<<< Updated upstream:fitnes aplikacija/__history/FrmPrincipal.pas.~54~
     Proizvodi: TButton;
     FloatAnimation1: TFloatAnimation;
     Button5: TButton;
     Trening: TButton;
     Izlaz: TButton;
     Button2: TButton;
+========
+>>>>>>>> Stashed changes:fitnes aplikacija/__history/FrmPrincipal.pas.~24~
     procedure FormShow(Sender: TObject);
     procedure Circle5Click(Sender: TObject);
     procedure FloatKeyAnimation1Finish(Sender: TObject);
     procedure FloatKeyAnimation2Finish(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Label17Click(Sender: TObject);
+<<<<<<<< Updated upstream:fitnes aplikacija/__history/FrmPrincipal.pas.~54~
     procedure IzlazClick(Sender: TObject);
     procedure TreningClick(Sender: TObject);
+========
+>>>>>>>> Stashed changes:fitnes aplikacija/__history/FrmPrincipal.pas.~24~
   private
     { Private declarations }
   public
@@ -168,6 +185,7 @@ begin
   Close;
 end;
 
+<<<<<<<< Updated upstream:fitnes aplikacija/__history/FrmPrincipal.pas.~54~
 procedure TForm1.TreningClick(Sender: TObject);
 begin
 
@@ -181,5 +199,7 @@ begin
   Form3.Show;
 end;
 
+========
+>>>>>>>> Stashed changes:fitnes aplikacija/__history/FrmPrincipal.pas.~24~
 end.
 
