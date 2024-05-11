@@ -13,9 +13,8 @@ uses
 
 type
   Tdatabase = class(TDataModule)
-    FDConnection1: TFDConnection;
-    FDQuery1: TFDQuery;
-    procedure DataModuleCreate(Sender: TObject);
+    dbLibrary: TFDConnection;
+    QTemp: TFDQuery;
   private
     { Private declarations }
   public
@@ -30,10 +29,5 @@ implementation
 {%CLASSGROUP 'FMX.Controls.TControl'}
 
 {$R *.dfm}
-
-procedure Tdatabase.DataModuleCreate(Sender: TObject);
-begin
-
-end;
 
 end.

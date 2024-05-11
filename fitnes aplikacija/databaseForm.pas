@@ -13,8 +13,8 @@ uses
 
 type
   Tdatabase = class(TDataModule)
-    dbLibrary: TFDConnection;
-    QTemp: TFDQuery;
+    FDConnection1: TFDConnection;
+    FDQuery1: TFDQuery;
   private
     { Private declarations }
   public

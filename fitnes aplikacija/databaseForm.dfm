@@ -2,7 +2,7 @@ object database: Tdatabase
   Height = 444
   Width = 476
   PixelsPerInch = 120
-  object dbLibrary: TFDConnection
+  object FDConnection1: TFDConnection
     Params.Strings = (
       'DriverID=SQLite'
       
@@ -11,13 +11,14 @@ object database: Tdatabase
     Connected = True
     LoginPrompt = False
     Left = 176
-    Top = 112
+    Top = 88
   end
-  object QTemp: TFDQuery
-    Connection = dbLibrary
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
     SQL.Strings = (
-      'Select * from users')
-    Left = 152
-    Top = 248
+      'select * from users'
+      '')
+    Left = 160
+    Top = 264
   end
 end
