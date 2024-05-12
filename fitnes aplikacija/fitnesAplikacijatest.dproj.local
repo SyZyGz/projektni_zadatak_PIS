@@ -1,2 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject/>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2024/05/12 14:56:12.846,=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit5.pas</Transaction>
+    <Transaction>2024/05/12 15:09:59.504,C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Cardio.fmx=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit5.fmx</Transaction>
+    <Transaction>2024/05/12 15:09:59.504,C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Cardio.pas=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit5.pas</Transaction>
+    <Transaction>2024/05/12 15:10:17.639,=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit6.pas</Transaction>
+    <Transaction>2024/05/12 15:11:38.966,C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Back.fmx=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit6.fmx</Transaction>
+    <Transaction>2024/05/12 15:11:38.966,C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Back.pas=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit6.pas</Transaction>
+    <Transaction>2024/05/12 15:49:54.176,=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit7.pas</Transaction>
+  </Transactions>
+</BorlandProject>

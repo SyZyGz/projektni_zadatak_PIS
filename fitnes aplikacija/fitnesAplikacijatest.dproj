@@ -219,6 +219,14 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="Cardio.pas">
+            <Form>Form5</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="Back.pas">
+            <Form>Form6</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <None Include="database\FitnessApp.db3"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
