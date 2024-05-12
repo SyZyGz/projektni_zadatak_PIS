@@ -2,72 +2,148 @@ object dodavanjeTezine: TdodavanjeTezine
   Left = 0
   Top = 0
   Caption = 'UnosTezine'
-  ClientHeight = 480
-  ClientWidth = 368
+  ClientHeight = 581
+  ClientWidth = 381
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
-  object Label1: TLabel
-    Position.X = 16.000000000000000000
-    Position.Y = 136.000000000000000000
-    Size.Width = 201.000000000000000000
-    Size.Height = 25.000000000000000000
+  object Layout1: TLayout
+    Size.Width = 385.000000000000000000
+    Size.Height = 581.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Unesite trenutnu tezinu:'
     TabOrder = 0
+    object Pozadina: TRectangle
+      Align = Contents
+      Fill.Kind = Gradient
+      Fill.Gradient.Points = <
+        item
+          Color = xFF6596E7
+          Offset = 0.000000000000000000
+        end
+        item
+          Color = xFF2EDA93
+          Offset = 1.000000000000000000
+        end>
+      Fill.Gradient.StartPosition.X = 0.318014889955520600
+      Fill.Gradient.StartPosition.Y = 1.000000000000000000
+      Fill.Gradient.StopPosition.X = 0.681985139846801800
+      Fill.Gradient.StopPosition.Y = 0.000000012136453620
+      HitTest = False
+      Size.Width = 385.000000000000000000
+      Size.Height = 581.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
   end
-  object Edit1: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
+  object Layout2: TLayout
+    Size.Width = 385.000000000000000000
+    Size.Height = 581.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 1
-    Position.X = 28.000000000000000000
-    Position.Y = 184.000000000000000000
-  end
-  object Button1: TButton
-    Position.X = 28.000000000000000000
-    Position.Y = 232.000000000000000000
-    Size.Width = 100.000000000000000000
-    Size.Height = 22.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 2
-    Text = 'sacuvaj tezinu'
-    OnClick = Button1Click
-  end
-  object Calendar1: TCalendar
-    Date = 45419.000000000000000000
-    Position.X = 180.000000000000000000
-    Position.Y = 184.000000000000000000
-    Size.Width = 180.000000000000000000
-    Size.Height = 160.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 3
-  end
-  object Memo1: TMemo
-    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-    DataDetectorTypes = []
-    Position.X = 28.000000000000000000
-    Position.Y = 368.000000000000000000
-    Size.Width = 332.000000000000000000
-    Size.Height = 50.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 4
-    Viewport.Width = 332.000000000000000000
-    Viewport.Height = 50.000000000000000000
-  end
-  object Label2: TLabel
-    Position.X = 180.000000000000000000
-    Position.Y = 136.000000000000000000
-    Size.Width = 157.000000000000000000
-    Size.Height = 25.000000000000000000
-    Size.PlatformDefault = False
-    Text = 'izaberite datum unosa:'
-    TabOrder = 5
-  end
-  object Button2: TButton
-    Position.X = 280.000000000000000000
-    Position.Y = 8.000000000000000000
-    TabOrder = 6
-    Text = 'nazad'
-    OnClick = Button2Click
+    object Memo1: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Position.X = 16.000000000000000000
+      Position.Y = 456.000000000000000000
+      Size.Width = 341.000000000000000000
+      Size.Height = 90.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Viewport.Width = 337.000000000000000000
+      Viewport.Height = 86.000000000000000000
+    end
+    object CuvanjeTezine: TButton
+      Position.X = 216.000000000000000000
+      Position.Y = 241.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Sacuvaj Tezinu!'
+      OnClick = CuvanjeTezineClick
+    end
+    object Button2: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'nazad'
+      OnClick = Button2Click
+    end
+    object Calendar1: TCalendar
+      Date = 45419.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 211.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 160.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+    end
+    object Edit1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      Position.X = 216.000000000000000000
+      Position.Y = 211.000000000000000000
+    end
+    object IzaberiDatumMerenja: TLabel
+      StyledSettings = []
+      Position.X = 16.000000000000000000
+      Position.Y = 170.000000000000000000
+      Size.Width = 153.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.FontColor = claBeige
+      Text = 'Izaberi datum merenja!'
+      TabOrder = 2
+      object ShadowEffect2: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+    object UnesiteTrenutnuTezinu: TLabel
+      StyledSettings = []
+      Position.X = 216.000000000000000000
+      Position.Y = 170.000000000000000000
+      Size.Width = 153.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.FontColor = claBeige
+      Text = 'Unesite Trenutnu Tezinu:'
+      TabOrder = 1
+      object ShadowEffect1: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+    object StatistikaMerenja: TLabel
+      StyledSettings = []
+      Position.X = 16.000000000000000000
+      Position.Y = 415.000000000000000000
+      Size.Width = 193.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.FontColor = claBeige
+      Text = 'Statistika i Pracenje Kilaze'
+      TabOrder = 0
+      object ShadowEffect3: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
   end
 end
