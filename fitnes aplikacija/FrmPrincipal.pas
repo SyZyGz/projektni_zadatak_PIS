@@ -1,16 +1,12 @@
 ﻿unit FrmPrincipal;
 
-
 interface
-
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
   FMX.Filter.Effects, FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls,
-  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView , Trening , Vezbe, Weight;
-
+  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView, Trening, Vezbe, Weight;
 type
-
   TForm1 = class(TForm)
     Layout1: TLayout;
     Layout2: TLayout;
@@ -98,66 +94,50 @@ type
     procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
+    ListBoxItem: TListBoxItem;
+    BeginDate, EndDate: TDateTime;
   public
     { Public declarations }
-    var
-      ListBoxItem : TListBoxItem;
-      BeginDate, EndDate : TDateTime;
   end;
-
-
 var
   Form1: TForm1;
-  var
   Form3Opened: Boolean = False;
-
 implementation
-
 {$R *.fmx}
-
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-// Zatvaranje trenutne forme
+  // Zatvaranje trenutne forme
   Close;
   // Kreiranje i prikazivanje nove forme
-       if not Assigned(dodavanjeTezine) then
-    dodavanjeTezine := TdodavanjeTezine.Create(Application);  // Kreiranje instance forme
-
+  if not Assigned(dodavanjeTezine) then
+    dodavanjeTezine := TdodavanjeTezine.Create(Application); // Kreiranje instance forme
   dodavanjeTezine.Show;
 end;
-
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-// Provera da li je forma već kreirana
+  // Provera da li je forma već kreirana
   if not Assigned(vezbe1) then
-    vezbe1 := Tvezbe1.Create(Application);  // Kreiranje instance forme
-
-  vezbe1.Show;  // Prikazivanje forme
+    vezbe1 := Tvezbe1.Create(Application); // Kreiranje instance forme
+  vezbe1.Show; // Prikazivanje forme
 end;
-
 procedure TForm1.Circle5Click(Sender: TObject);
 begin
   FloatKeyAnimation1.Enabled := True;
   FloatKeyAnimation2.Enabled := True;
 end;
-
 procedure TForm1.FloatKeyAnimation1Finish(Sender: TObject);
 begin
   FloatKeyAnimation1.Enabled := False;
 end;
-
 procedure TForm1.FloatKeyAnimation2Finish(Sender: TObject);
 begin
   FloatKeyAnimation2.Enabled := False;
 end;
-
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-if not Visible then
-
-  MultiView1.HideMaster;
+  if not Visible then
+    MultiView1.HideMaster;
 end;
-
 procedure TForm1.FormShow(Sender: TObject);
 var
   Fmt: TFormatSettings;
@@ -167,44 +147,34 @@ begin
   Fmt := TFormatSettings.Create;
   Fmt.ShortDateFormat := 'dd/mm/yyyy';
   Fmt.DateSeparator := '/';
-
-  BeginDate := Date;  // Set BeginDate to today's date
-
+  BeginDate := Date; // Set BeginDate to today's date
   // Now let's say we want to work with BeginDate in a string format
   try
     s := FormatDateTime('dd/mm/yyyy', BeginDate, Fmt); // Convert BeginDate to string
     if TryStrToDate(s, d, Fmt) then
-      BeginDate := d  // Re-assigning just for demonstration
+      BeginDate := d // Re-assigning just for demonstration
     else
       ShowMessage('Failed to convert date: ' + s);
   except
     on E: Exception do
       ShowMessage('Unexpected error: ' + E.Message);
   end;
-
 end;
 procedure TForm1.IzlazClick(Sender: TObject);
 begin
-Application.Terminate;
+  Application.Terminate;
 end;
-
 procedure TForm1.Label17Click(Sender: TObject);
 begin
   Close;
 end;
-
 procedure TForm1.TreningClick(Sender: TObject);
 begin
-
-   if not Assigned(Form3) then
+  if not Assigned(Form3) then
     Form3 := TForm3.Create(Self);
-
   Form3Opened := True;
-
-  Hide;
-
+  Close;
   Form3.Show;
 end;
-
 end.
 

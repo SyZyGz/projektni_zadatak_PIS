@@ -14,7 +14,7 @@ object Login: TLogin
     Size.Height = 584.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    object Rectangle2: TRectangle
+    object BackGround: TRectangle
       Align = Contents
       Fill.Kind = Gradient
       Fill.Gradient.Points = <
@@ -102,20 +102,20 @@ object Login: TLogin
         Position.X = 40.000000000000000000
         Position.Y = 304.000000000000000000
         Size.Width = 201.000000000000000000
-        Size.Height = 22.000000000000000000
+        Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         object Edit2: TEdit
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           TabOrder = 1
           Position.Y = 48.000000000000000000
           Size.Width = 201.000000000000000000
-          Size.Height = 22.000000000000000000
+          Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
           object PasswordEditButton1: TPasswordEditButton
             CanFocus = False
             Cursor = crArrow
             Size.Width = 28.000000000000000000
-            Size.Height = 18.000000000000000000
+            Size.Height = 28.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
           end
@@ -166,7 +166,7 @@ object Login: TLogin
           TextSettings.FontColor = claBlue
           TextSettings.HorzAlign = Trailing
           Text = 'Forgot Password'
-          TabOrder = 4
+          TabOrder = 3
         end
       end
     end
