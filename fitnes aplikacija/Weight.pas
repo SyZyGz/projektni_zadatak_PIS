@@ -6,18 +6,25 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Memo.Types,
   FMX.ScrollBox, FMX.Memo, FMX.Calendar, FMX.StdCtrls, FMX.Edit,
-  FMX.Controls.Presentation ;
+  FMX.Controls.Presentation, FMX.Layouts, FMX.Objects, FMX.Effects ;
 
 type
   TdodavanjeTezine = class(TForm)
-    Label1: TLabel;
     Edit1: TEdit;
-    Button1: TButton;
+    CuvanjeTezine: TButton;
     Calendar1: TCalendar;
     Memo1: TMemo;
-    Label2: TLabel;
     Button2: TButton;
-    procedure Button1Click(Sender: TObject);
+    Layout1: TLayout;
+    Pozadina: TRectangle;
+    Layout2: TLayout;
+    IzaberiDatumMerenja: TLabel;
+    ShadowEffect2: TShadowEffect;
+    UnesiteTrenutnuTezinu: TLabel;
+    ShadowEffect1: TShadowEffect;
+    StatistikaMerenja: TLabel;
+    ShadowEffect3: TShadowEffect;
+    procedure CuvanjeTezineClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
@@ -34,7 +41,7 @@ implementation
 
 {$R *.fmx}
 
-procedure TdodavanjeTezine.Button1Click(Sender: TObject);
+procedure TdodavanjeTezine.CuvanjeTezineClick(Sender: TObject);
 begin
 // Logika za snimanje težine
   Memo1.Lines.Add('Težina za datum ' + DateToStr(Calendar1.Date) + ' je ' + Edit1.Text + ' kg.');
