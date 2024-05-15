@@ -17,10 +17,10 @@ uses
 begin
   Application.Initialize;
   // Prvo kreiraj formu LoginForm
+  Application.CreateForm(Tdatabase, database);
   Application.CreateForm(TLogin, Login);
   Application.CreateForm(Tvezbe1, vezbe1);
   Application.CreateForm(TdodavanjeTezine, dodavanjeTezine);
-  Application.CreateForm(Tdatabase, database);
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
   // Zatim kreiraj ostale forme
