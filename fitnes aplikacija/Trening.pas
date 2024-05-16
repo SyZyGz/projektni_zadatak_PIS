@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
   FMX.Objects, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ExtCtrls, Access2000,
-  FMX.Effects;
+  FMX.Effects, NavigationManager;
 
 type
   TForm3 = class(TForm)
@@ -48,6 +48,8 @@ type
     FinishedBtn: TButton;
     OnGoingBtn: TButton;
     procedure BackButtonClick(Sender: TObject);
+    procedure BackLedjaBtnClick(Sender: TObject);
+    procedure CardioBtnClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,7 +65,20 @@ implementation
 
 procedure TForm3.BackButtonClick(Sender: TObject);
 begin
-       Close;
+TNavigationManager.GoBack;
+Form3.Close;
+end;
+
+procedure TForm3.BackLedjaBtnClick(Sender: TObject);
+begin
+TNavigationManager.GoToBack;
+Form3.Close;
+end;
+
+procedure TForm3.CardioBtnClick(Sender: TObject);
+begin
+TNavigationManager.GoToCardio;
+Form3.Close;
 end;
 
 end.

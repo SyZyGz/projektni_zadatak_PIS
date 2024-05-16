@@ -4,6 +4,7 @@ object Login: TLogin
   Caption = 'Login'
   ClientHeight = 584
   ClientWidth = 384
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]

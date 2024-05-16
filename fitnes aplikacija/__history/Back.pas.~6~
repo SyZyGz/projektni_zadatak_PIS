@@ -1,0 +1,82 @@
+unit Back;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
+  FMX.StdCtrls, FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, NavigationManager;
+
+type
+  TForm6 = class(TForm)
+    BackGround: TLayout;
+    Pozadina: TRectangle;
+    GornjaSekcija: TLayout;
+    Cardio: TImage;
+    Z: TImage;
+    Biceps: TImage;
+    CardioBtn: TButton;
+    BackLedjaBtn: TButton;
+    BicepsBtn: TButton;
+    HeaderText: TLayout;
+    TreningHeader: TLabel;
+    ShadowEffect1: TShadowEffect;
+    WelcomeBack: TLabel;
+    ShadowEffect2: TShadowEffect;
+    BackButton: TButton;
+    DonjaSekcija: TLayout;
+    CardioProgram: TLabel;
+    ShadowEffect3: TShadowEffect;
+    Time: TButton;
+    Progress: TButton;
+    Cal: TButton;
+    Exercise: TLabel;
+    ShadowEffect4: TShadowEffect;
+    ViewAll: TLabel;
+    ShadowEffect5: TShadowEffect;
+    Exercise1Img: TImage;
+    Exercise2Img: TImage;
+    Exercise1Label: TLabel;
+    ShadowEffect6: TShadowEffect;
+    Label4: TLabel;
+    ShadowEffect7: TShadowEffect;
+    Exercise2Label: TLabel;
+    ShadowEffect8: TShadowEffect;
+    Label6: TLabel;
+    ShadowEffect9: TShadowEffect;
+    FinishedBtn: TButton;
+    OnGoingBtn: TButton;
+    procedure CardioBtnClick(Sender: TObject);
+    procedure BicepsBtnClick(Sender: TObject);
+    procedure BackButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+{$R *.fmx}
+
+
+
+procedure TForm6.BackButtonClick(Sender: TObject);
+begin
+TNavigationManager.GoBack;
+end;
+
+procedure TForm6.BicepsBtnClick(Sender: TObject);
+begin
+TNavigationManager.GoToBiceps
+end;
+
+procedure TForm6.CardioBtnClick(Sender: TObject);
+begin
+TNavigationManager.GoToCardio;
+end;
+
+end.

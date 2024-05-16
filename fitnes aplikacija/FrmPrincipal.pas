@@ -5,7 +5,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
   FMX.Filter.Effects, FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls,
-  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView, Trening, Vezbe, Weight;
+  FMX.Objects, FMX.ListBox, FMX.Ani, FMX.MultiView, Vezbe, Weight, Cardio;
 type
   TForm1 = class(TForm)
     Layout1: TLayout;
@@ -101,7 +101,7 @@ type
   end;
 var
   Form1: TForm1;
-  Form3Opened: Boolean = False;
+  Form5Opened: Boolean = False;
 implementation
 {$R *.fmx}
 procedure TForm1.Button3Click(Sender: TObject);
@@ -170,11 +170,11 @@ begin
 end;
 procedure TForm1.TreningClick(Sender: TObject);
 begin
-  if not Assigned(Form3) then
-    Form3 := TForm3.Create(Self);
-  Form3Opened := True;
+  if not Assigned(Form5) then
+    Form5 := TForm5.Create(Self);
+  Form5Opened := True;
   Close;
-  Form3.Show;
+  Form5.Show;
 end;
 end.
 

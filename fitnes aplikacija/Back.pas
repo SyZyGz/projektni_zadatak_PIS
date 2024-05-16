@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
-  FMX.StdCtrls, FMX.Controls.Presentation, FMX.Objects, FMX.Layouts;
+  FMX.StdCtrls, FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, NavigationManager;
 
 type
   TForm6 = class(TForm)
@@ -13,7 +13,7 @@ type
     Pozadina: TRectangle;
     GornjaSekcija: TLayout;
     Cardio: TImage;
-    Back: TImage;
+    Z: TImage;
     Biceps: TImage;
     CardioBtn: TButton;
     BackLedjaBtn: TButton;
@@ -46,6 +46,9 @@ type
     ShadowEffect9: TShadowEffect;
     FinishedBtn: TButton;
     OnGoingBtn: TButton;
+    procedure CardioBtnClick(Sender: TObject);
+    procedure BicepsBtnClick(Sender: TObject);
+    procedure BackButtonClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,5 +61,25 @@ var
 implementation
 
 {$R *.fmx}
+
+
+
+procedure TForm6.BackButtonClick(Sender: TObject);
+begin
+TNavigationManager.GoBack;
+Form6.Close;
+end;
+
+procedure TForm6.BicepsBtnClick(Sender: TObject);
+begin
+TNavigationManager.GoToBiceps;
+Form6.Close;
+end;
+
+procedure TForm6.CardioBtnClick(Sender: TObject);
+begin
+TNavigationManager.GoToCardio;
+Form6.Close;
+end;
 
 end.

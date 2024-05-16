@@ -5,13 +5,13 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
-  FMX.StdCtrls, FMX.Controls.Presentation, FMX.Objects, FMX.Layouts;
+  FMX.StdCtrls, FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, Back, Trening,NavigationManager;
 
 type
   TForm5 = class(TForm)
     BackGround: TLayout;
     Pozadina: TRectangle;
-    GornjaSekcija: TLayout;
+    onA: TLayout;
     Cardio: TImage;
     Back: TImage;
     Biceps: TImage;
@@ -46,6 +46,10 @@ type
     ShadowEffect9: TShadowEffect;
     FinishedBtn: TButton;
     OnGoingBtn: TButton;
+    procedure BackLedjaBtnClick(Sender: TObject);
+    procedure BackButtonClick(Sender: TObject);
+    procedure BicepsBtnClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,9 +58,49 @@ type
 
 var
   Form5: TForm5;
-
+  Form6Opened: Boolean = False;
+  Form3Opened: Boolean = False;
 implementation
 
 {$R *.fmx}
+
+procedure TForm5.BackButtonClick(Sender: TObject);
+begin
+// Form5.Close;
+//   if Screen.FormCount > 1 then
+//    Screen.Forms[Screen.FormCount - 2].Show;
+TNavigationManager.GoBack;
+Form5.Close;
+end;
+
+procedure TForm5.BackLedjaBtnClick(Sender: TObject);
+   begin
+//  if not Assigned(Form6) then
+//    Form6 := TForm6.Create(Self);
+//  Form6Opened := True;
+//  Close;
+//  Form6.Show;
+TNavigationManager.GoToBack;
+Form5.Close;
+end;
+
+procedure TForm5.BicepsBtnClick(Sender: TObject);
+begin
+//    if not Assigned(Form3) then
+//    Form3 := TForm3.Create(Self);
+//  Form3Opened := True;
+//  Close;
+//  Form3.Show;
+TNavigationManager.GoToBiceps;
+Form5.Close;
+end;
+
+procedure TForm5.FormActivate(Sender: TObject);
+begin
+if not Assigned(Form3) then
+    Form3 := TForm3.Create(Self);
+    if not Assigned(Form6) then
+    Form6 := TForm6.Create(Self);
+end;
 
 end.
