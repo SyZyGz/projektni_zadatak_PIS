@@ -65,12 +65,12 @@ with dataBase do begin
       if not Assigned(Form1) then
         Form1 := TForm1.Create(Application);
       Form1.Label12.Text := 'User Name: ' + Edit1.Text;
-      Form1.ShowModal(
+      {frmMain.ShowModal(
         procedure (ModalResult: TModalResult)
         begin
           if ModalResult = mrClose then Application.Terminate;
         end
-      );
+      );  }
     end
     else
     begin

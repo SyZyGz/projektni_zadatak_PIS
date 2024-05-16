@@ -17,12 +17,7 @@ object database: Tdatabase
     SQL.Strings = (
       'select * from users'
       '')
-    Left = 168
+    Left = 160
     Top = 264
-  end
-  object FDQuery1: TFDQuery
-    Connection = dbFitness
-    Left = 328
-    Top = 272
   end
 end

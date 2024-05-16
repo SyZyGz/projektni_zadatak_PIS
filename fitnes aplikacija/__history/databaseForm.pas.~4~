@@ -15,7 +15,6 @@ type
   Tdatabase = class(TDataModule)
     dbFitness: TFDConnection;
     qTemp: TFDQuery;
-    FDQuery1: TFDQuery;
   private
     { Private declarations }
   public
