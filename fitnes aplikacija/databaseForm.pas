@@ -16,6 +16,7 @@ type
     dbFitness: TFDConnection;
     qTemp: TFDQuery;
     FDQuery1: TFDQuery;
+    FDTransaction1: TFDTransaction;
   private
     { Private declarations }
   public

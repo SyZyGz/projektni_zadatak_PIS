@@ -1,0 +1,30 @@
+object WeightDB: TWeightDB
+  Left = 0
+  Top = 0
+  Caption = 'Form7'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'DriverID=SQLite'
+      
+        'Database=C:\Users\pc\OneDrive\Desktop\repository\projektni_zadat' +
+        'ak_PIS\fitnes aplikacija\database\FitnessApp.db3')
+    Connected = True
+    LoginPrompt = False
+    Left = 224
+    Top = 112
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from weight;')
+    Left = 160
+    Top = 224
+  end
+end

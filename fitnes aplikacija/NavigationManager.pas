@@ -7,6 +7,7 @@ interface
     class procedure GoToBack;
     class procedure GoToBiceps;
     class procedure GoBack;
+     //class procedure GoToWeight;
   end;
 implementation
 
@@ -33,6 +34,12 @@ class procedure TNavigationManager.GoBack;
 begin
          Form1.Show;
 end;
+{class procedure TNavigationManager.GoToWeight;
+begin
+  // Otvori formu Weight
+  {dodavanjeTezine := TdodavanjeTezine.Create(Application);
+  WeightForm.Show;}
+//end;}
 
 end.
 

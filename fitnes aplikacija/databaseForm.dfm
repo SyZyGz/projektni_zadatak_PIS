@@ -8,21 +8,29 @@ object database: Tdatabase
       
         'Database=C:\Users\pc\OneDrive\Desktop\repository\projektni_zadat' +
         'ak_PIS\fitnes aplikacija\database\FitnessApp.db3')
+    Connected = True
     LoginPrompt = False
-    Left = 176
-    Top = 88
+    Left = 120
+    Top = 120
   end
   object qTemp: TFDQuery
     Connection = dbFitness
     SQL.Strings = (
       'select * from users'
       '')
-    Left = 168
-    Top = 264
+    Left = 104
+    Top = 216
   end
   object FDQuery1: TFDQuery
     Connection = dbFitness
-    Left = 328
-    Top = 272
+    SQL.Strings = (
+      'select * from weight;')
+    Left = 200
+    Top = 216
+  end
+  object FDTransaction1: TFDTransaction
+    Connection = dbFitness
+    Left = 112
+    Top = 336
   end
 end

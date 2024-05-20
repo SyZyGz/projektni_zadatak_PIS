@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Memo.Types,
   FMX.ScrollBox, FMX.Memo, FMX.Calendar, FMX.StdCtrls, FMX.Edit,
-  FMX.Controls.Presentation, FMX.Layouts, FMX.Objects, FMX.Effects,databaseForm ;
+  FMX.Controls.Presentation, FMX.Layouts, FMX.Objects, FMX.Effects,unit7 ;
 
 type
   TdodavanjeTezine = class(TForm)
@@ -24,9 +24,10 @@ type
     ShadowEffect1: TShadowEffect;
     StatistikaMerenja: TLabel;
     ShadowEffect3: TShadowEffect;
-    procedure CuvanjeTezineClick(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+   // procedure CuvanjeTezineClick(Sender: TObject);
+    //procedure Button2Click(Sender: TObject);
   private
+  //FDQuery: TFDQuery;
     { Private declarations }
      //FPrethodnaForma: TForm1; // Polje za čuvanje reference na prethodnu formu
   public
@@ -41,19 +42,30 @@ implementation
 
 {$R *.fmx}
 
-procedure TdodavanjeTezine.CuvanjeTezineClick(Sender: TObject);
-begin
-// Logika za snimanje težine
-  Memo1.Lines.Add('Težina za datum ' + DateToStr(Calendar1.Date) + ' je ' + Edit1.Text + ' kg.');
-  FDQuery1.SQL.Text := 'INSERT INTO Tezina (Datum, Tezina) VALUES (:Datum, :Tezina)';
-FDQuery1.ParamByName('Datum').AsDate := Date; // Postavljanje trenutnog datuma
-FDQuery1.ParamByName('Tezina').AsFloat := 75.5; // Primer unosa težine
-FDQuery1.ExecSQL;
-end;
+//procedure TdodavanjeTezine.CuvanjeTezineClick(Sender: TObject);
+{begin
+if (Edit1.Text <> '') and (Calendar1.Date <> 0) then
+  begin
+    //FDTransaction1.StartTransaction;
+    try
+      // Unos podataka u bazu podataka
+      FDQuery.SQL.Text := 'INSERT INTO Tezina (Datum, Tezina) VALUES (:Datum, :Tezina)';
+      FDQuery.ParamByName('Datum').AsDate := Calendar1.Date;
+      FDQuery.ParamByName('Tezina').AsFloat := StrToFloat(Edit1.Text);
+      FDQuery.ExecSQL;
+
+      // Ažuriranje korisničkog interfejsa
+      Memo1.Lines.Add('Težina za datum ' + DateToStr(Calendar1.Date) + ' je ' + Edit1.Text + ' kg.');
+      ShowMessage('Podaci uspešno uneti u bazu.');
+    except
+      on E: Exception do
+        ShowMessage('Greška pri unosu podataka u bazu: ' + E.Message);
+    end;
+  end;
 
 procedure TdodavanjeTezine.Button2Click(Sender: TObject);
 begin
-Close;
-end;
+Close; }
+//end;
 
 end.
