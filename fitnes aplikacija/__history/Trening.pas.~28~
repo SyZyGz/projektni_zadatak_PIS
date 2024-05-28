@@ -1,0 +1,91 @@
+unit Trening;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
+  FMX.Objects, FMX.Controls.Presentation, FMX.StdCtrls, FMX.ExtCtrls, Access2000,
+  FMX.Effects, Cardio, Back;
+
+type
+  TForm3 = class(TForm)
+    Biceps: TImage;
+    Back: TImage;
+    Cardio: TImage;
+    BicepsBtn: TButton;
+    BackLedjaBtn: TButton;
+    CardioBtn: TButton;
+    BackButton: TButton;
+    Pozadina: TRectangle;
+    BackGround: TLayout;
+    GornjaSekcija: TLayout;
+    HeaderText: TLayout;
+    TreningHeader: TLabel;
+    ShadowEffect1: TShadowEffect;
+    WelcomeBack: TLabel;
+    ShadowEffect2: TShadowEffect;
+    DonjaSekcija: TLayout;
+    BicepsProgram: TLabel;
+    ShadowEffect3: TShadowEffect;
+    Time: TButton;
+    Progress: TButton;
+    Cal: TButton;
+    Exercise: TLabel;
+    ShadowEffect4: TShadowEffect;
+    ViewAll: TLabel;
+    ShadowEffect5: TShadowEffect;
+    Exercise1Img: TImage;
+    Exercise2Img: TImage;
+    Exercise1Label: TLabel;
+    ShadowEffect6: TShadowEffect;
+    Label4: TLabel;
+    ShadowEffect7: TShadowEffect;
+    Exercise2Label: TLabel;
+    ShadowEffect8: TShadowEffect;
+    Label6: TLabel;
+    ShadowEffect9: TShadowEffect;
+    FinishedBtn: TButton;
+    OnGoingBtn: TButton;
+    procedure BackButtonClick(Sender: TObject);
+    procedure BackLedjaBtnClick(Sender: TObject);
+    procedure CardioBtnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.fmx}
+
+procedure TForm3.BackButtonClick(Sender: TObject);
+begin
+Form3.Close;
+if  Screen.FormCount > 1 then
+    Screen.Forms[Screen.FormCount - 2].Show;
+end;
+
+procedure TForm3.BackLedjaBtnClick(Sender: TObject);
+begin
+if not Assigned(Form6) then
+    Form6 := TForm6.Create(Self);
+  Form6Opened := True;
+  Close;
+  Form6.Show;
+end;
+
+procedure TForm3.CardioBtnClick(Sender: TObject);
+begin
+      if not Assigned(Form5) then
+    Form5 := TForm5.Create(Self);
+  Form5Opened := True;
+  Close;
+  Form5.Show;
+end;
+
+end.

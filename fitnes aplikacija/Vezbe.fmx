@@ -2,8 +2,9 @@ object vezbe1: Tvezbe1
   Left = 0
   Top = 0
   Caption = 'Vezbe'
-  ClientHeight = 512
+  ClientHeight = 580
   ClientWidth = 380
+  Position = DesktopCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -1747,7 +1748,7 @@ object vezbe1: Tvezbe1
       end>
     Align = Client
     Size.Width = 380.000000000000000000
-    Size.Height = 512.000000000000000000
+    Size.Height = 580.000000000000000000
     Size.PlatformDefault = False
     WrapMode = Stretch
     object teretana: TButton
