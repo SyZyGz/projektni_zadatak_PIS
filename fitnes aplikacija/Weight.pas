@@ -24,8 +24,14 @@ type
     ShadowEffect1: TShadowEffect;
     StatistikaMerenja: TLabel;
     ShadowEffect3: TShadowEffect;
+<<<<<<< HEAD
+    Exercise1Img: TImage;
+    procedure CuvanjeTezineClick(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+=======
    // procedure CuvanjeTezineClick(Sender: TObject);
     //procedure Button2Click(Sender: TObject);
+>>>>>>> c984136755e110d0dbe04e6b88b8b3a4251e0c11
   private
   //FDQuery: TFDQuery;
     { Private declarations }
