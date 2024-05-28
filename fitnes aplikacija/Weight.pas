@@ -24,6 +24,7 @@ type
     ShadowEffect1: TShadowEffect;
     StatistikaMerenja: TLabel;
     ShadowEffect3: TShadowEffect;
+    Exercise1Img: TImage;
     procedure CuvanjeTezineClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
   private
