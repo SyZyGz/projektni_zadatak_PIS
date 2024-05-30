@@ -50,8 +50,8 @@ object dodavanjeTezine: TdodavanjeTezine
       Size.Height = 90.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 6
-      Viewport.Width = 337.000000000000000000
-      Viewport.Height = 86.000000000000000000
+      Viewport.Width = 341.000000000000000000
+      Viewport.Height = 90.000000000000000000
     end
     object CuvanjeTezine: TButton
       Position.X = 216.000000000000000000
@@ -61,7 +61,6 @@ object dodavanjeTezine: TdodavanjeTezine
       Size.PlatformDefault = False
       TabOrder = 4
       Text = 'Sacuvaj Tezinu!'
-      OnClick = CuvanjeTezineClick
     end
     object Button2: TButton
       Position.X = 16.000000000000000000
@@ -71,7 +70,6 @@ object dodavanjeTezine: TdodavanjeTezine
       Size.PlatformDefault = False
       TabOrder = 7
       Text = 'nazad'
-      OnClick = Button2Click
     end
     object Calendar1: TCalendar
       Date = 45419.000000000000000000
