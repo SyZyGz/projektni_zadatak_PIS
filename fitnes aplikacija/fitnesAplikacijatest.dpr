@@ -11,7 +11,9 @@ uses
   databaseForm in 'databaseForm.pas' {database: TDataModule},
   Cardio in 'Cardio.pas' {Form5},
   Back in 'Back.pas' {Form6},
-  NavigationManager in 'NavigationManager.pas';
+  NavigationManager in 'NavigationManager.pas',
+  UProizvodi in 'UProizvodi.pas' {Form7},
+  PlacanjeProizvoda in 'PlacanjeProizvoda.pas' {Form8};
 
 {$R *.res}
 
@@ -19,6 +21,8 @@ begin
   Application.Initialize;
   // Prvo kreiraj formu LoginForm
   Application.CreateForm(TLogin, Login);
+  Application.CreateForm(TForm7, Form7);
+  Application.CreateForm(TForm8, Form8);
   // Zatim kreiraj ostale forme
   Application.CreateForm(TForm1, Form1);
   Application.Run;

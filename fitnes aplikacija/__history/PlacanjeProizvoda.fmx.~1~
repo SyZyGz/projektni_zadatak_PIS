@@ -1,0 +1,303 @@
+﻿object Form8: TForm8
+  Left = 0
+  Top = 0
+  Caption = 'Form8'
+  ClientHeight = 584
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Pozadina: TLayout
+    Align = Top
+    Size.Width = 384.000000000000000000
+    Size.Height = 584.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object BackGround: TRectangle
+      Align = Contents
+      Fill.Kind = Gradient
+      Fill.Gradient.Points = <
+        item
+          Color = xFF6596E7
+          Offset = 0.000000000000000000
+        end
+        item
+          Color = xFF2EDA93
+          Offset = 1.000000000000000000
+        end>
+      Fill.Gradient.StartPosition.X = 0.318014889955520600
+      Fill.Gradient.StartPosition.Y = 1.000000000000000000
+      Fill.Gradient.StopPosition.X = 0.681985139846801800
+      Fill.Gradient.StopPosition.Y = 0.000000012136453620
+      HitTest = False
+      Size.Width = 384.000000000000000000
+      Size.Height = 584.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+  end
+  object GornjiDeo: TLayout
+    Position.X = 16.000000000000000000
+    Position.Y = 14.000000000000000000
+    Size.Width = 360.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object Back: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 41.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = '<--'
+    end
+    object Label5: TLabel
+      StyledSettings = []
+      Position.X = 65.000000000000000000
+      Position.Y = 9.000000000000000000
+      Size.Width = 287.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claBeige
+      Text = 'Zavrsite kupovinu!'
+      TabOrder = 0
+      object ShadowEffect7: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+  end
+  object AdresaKupca: TLayout
+    Position.X = 16.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 360.000000000000000000
+    Size.Height = 289.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    object Label1: TLabel
+      StyledSettings = []
+      Position.X = 8.000000000000000000
+      Position.Y = -1.000000000000000000
+      Size.Width = 287.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claBeige
+      Text = 'Adresa dostave:'
+      TabOrder = 0
+      object ShadowEffect1: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+    object PoljeZaEmail: TLayout
+      Position.X = 8.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.Y = 18.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Email: TLabel
+        StyledSettings = [Family, Size, Style]
+        Position.Y = -7.000000000000000000
+        TextSettings.FontColor = claCornsilk
+        Text = 'E-mail adresa '
+        TabOrder = 2
+        object ShadowEffect4: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+    end
+    object PoljeZaIme: TLayout
+      Position.X = 8.000000000000000000
+      Position.Y = 106.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object Edit2: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.Y = 18.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ImePrezime: TLabel
+        StyledSettings = [Family, Size, Style]
+        Position.Y = -7.000000000000000000
+        TextSettings.FontColor = claCornsilk
+        Text = 'Ime I Prezime'
+        TabOrder = 2
+        object ShadowEffect2: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+    end
+    object PoljeUlica: TLayout
+      Position.X = 8.000000000000000000
+      Position.Y = 172.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object Edit3: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.Y = 18.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label2: TLabel
+        StyledSettings = [Family, Size, Style]
+        Position.Y = -7.000000000000000000
+        TextSettings.FontColor = claCornsilk
+        Text = 'Ulica'
+        TabOrder = 2
+        object ShadowEffect3: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+    end
+    object Layout1: TLayout
+      Position.X = 8.000000000000000000
+      Position.Y = 238.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Edit4: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.Y = 18.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label3: TLabel
+        StyledSettings = [Family, Size, Style]
+        Position.Y = -7.000000000000000000
+        TextSettings.FontColor = claCornsilk
+        Text = 'Telefonski Broij'
+        TabOrder = 2
+        object ShadowEffect5: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+    end
+  end
+  object NacinPlacanja: TLayout
+    Position.X = 16.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 360.000000000000000000
+    Size.Height = 192.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    object Label4: TLabel
+      StyledSettings = []
+      Position.X = 16.000000000000000000
+      Position.Y = 7.000000000000000000
+      Size.Width = 287.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claBeige
+      Text = 'Nacin placanja:'
+      TabOrder = 1
+      object ShadowEffect6: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+    object Pouzećem: TRadioButton
+      Position.X = 16.000000000000000000
+      Position.Y = 48.000000000000000000
+      TabOrder = 3
+      Text = 'Pouze'#263'em'
+    end
+    object PlaćanjeKarticama: TRadioButton
+      Position.X = 16.000000000000000000
+      Position.Y = 75.000000000000000000
+      Size.Width = 129.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Pla'#263'anje karticama'
+    end
+    object Label6: TLabel
+      StyledSettings = []
+      Position.X = 16.000000000000000000
+      Position.Y = 96.000000000000000000
+      Size.Width = 287.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claGreenyellow
+      Text = 'Ukupan Iznos 2560 RSD'
+      TabOrder = 0
+      object ShadowEffect8: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+    object PoruciOdmah: TButton
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 8.000000000000000000
+      Position.Y = 137.000000000000000000
+      Size.Width = 344.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'NARUCI ODMAH'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end
