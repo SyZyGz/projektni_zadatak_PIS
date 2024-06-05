@@ -4,7 +4,6 @@ object dodavanjeTezine: TdodavanjeTezine
   Caption = 'UnosTezine'
   ClientHeight = 581
   ClientWidth = 381
-  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -51,8 +50,8 @@ object dodavanjeTezine: TdodavanjeTezine
       Size.Height = 90.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 6
-      Viewport.Width = 341.000000000000000000
-      Viewport.Height = 90.000000000000000000
+      Viewport.Width = 337.000000000000000000
+      Viewport.Height = 86.000000000000000000
     end
     object CuvanjeTezine: TButton
       Position.X = 216.000000000000000000
