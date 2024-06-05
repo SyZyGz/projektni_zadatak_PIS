@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Memo.Types,
   FMX.ScrollBox, FMX.Memo, FMX.Calendar, FMX.StdCtrls, FMX.Edit,
-  FMX.Controls.Presentation, FMX.Layouts, FMX.Objects, FMX.Effects ;
+  FMX.Controls.Presentation, FMX.Layouts, FMX.Objects, FMX.Effects, NavigationManager ;
 
 type
   TdodavanjeTezine = class(TForm)
@@ -49,7 +49,8 @@ end;
 
 procedure TdodavanjeTezine.Button2Click(Sender: TObject);
 begin
-Close;
+TNavigationManager.GoBack;
+dodavanjeTezine.Close;
 end;
 
 end.
