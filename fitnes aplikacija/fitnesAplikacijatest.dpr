@@ -25,7 +25,6 @@ begin
   // Prvo kreiraj formu LoginForm
   Application.CreateForm(Tdatabase, database);
   Application.CreateForm(TLogin, Login);
-  Application.CreateForm(TForm12, Form12);
   // Zatim kreiraj ostale forme
   Application.CreateForm(TForm1, Form1);
   Application.Run;

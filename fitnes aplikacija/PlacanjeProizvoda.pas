@@ -43,8 +43,9 @@ type
     ShadowEffect8: TShadowEffect;
     PoruciOdmah: TButton;
     procedure BackClick(Sender: TObject);
+    procedure PoruciOdmahClick(Sender: TObject);
   private
-    { Private declarations }
+    procedure ClearTextFields;
   public
     { Public declarations }
   end;
@@ -60,6 +61,23 @@ procedure TForm8.BackClick(Sender: TObject);
 begin
       TNavigationManager.GoToProducts;
       Form8.Close;
+end;
+
+procedure TForm8.PoruciOdmahClick(Sender: TObject);
+begin
+       ShowMessage('Uspešno ste poručili proizvod');
+       ClearTextFields;
+end;
+
+procedure TForm8.ClearTextFields;
+var
+  I: Integer;
+begin
+  for I := 0 to ComponentCount - 1 do
+  begin
+    if Components[I] is TEdit then
+      TEdit(Components[I]).Text := '';
+  end;
 end;
 
 end.

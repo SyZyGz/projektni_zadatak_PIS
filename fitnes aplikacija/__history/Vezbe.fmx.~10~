@@ -1,0 +1,243 @@
+object vezbe1: Tvezbe1
+  Left = 0
+  Top = 0
+  Caption = 'Vezbe'
+  ClientHeight = 584
+  ClientWidth = 384
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Pozadina: TLayout
+    Align = Top
+    Size.Width = 384.000000000000000000
+    Size.Height = 584.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object BackGround: TRectangle
+      Align = Contents
+      Fill.Kind = Gradient
+      Fill.Gradient.Points = <
+        item
+          Color = xFF6596E7
+          Offset = 0.000000000000000000
+        end
+        item
+          Color = xFF2EDA93
+          Offset = 1.000000000000000000
+        end>
+      Fill.Gradient.StartPosition.X = 0.318014889955520600
+      Fill.Gradient.StartPosition.Y = 1.000000000000000000
+      Fill.Gradient.StopPosition.X = 0.681985139846801800
+      Fill.Gradient.StopPosition.Y = 0.000000012136453620
+      HitTest = False
+      Size.Width = 384.000000000000000000
+      Size.Height = 584.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+  end
+  object GornjDeo: TLayout
+    Position.X = 24.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 337.000000000000000000
+    Size.Height = 97.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Back: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 41.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = '<--'
+      OnClick = BackClick
+    end
+    object Label5: TLabel
+      StyledSettings = []
+      Position.X = 25.000000000000000000
+      Position.Y = 49.000000000000000000
+      Size.Width = 296.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 25.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claBeige
+      Text = 'Izaberite Tip Treninga'
+      TabOrder = 0
+      object ShadowEffect7: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+  end
+  object Layout1: TLayout
+    Position.X = 24.000000000000000000
+    Position.Y = 122.000000000000000000
+    Size.Width = 337.000000000000000000
+    Size.Height = 415.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object TreningTeretana: TButton
+      Position.X = 25.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Trening u Teretani'
+      OnClick = TreningTeretanaClick
+      object RadioButton7: TRadioButton
+        Position.Y = 305.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'Easy'
+        object RadioButton8: TRadioButton
+          Position.X = 112.000000000000000000
+          Size.Width = 65.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          Text = 'MIddle'
+          object RadioButton9: TRadioButton
+            Position.X = 104.000000000000000000
+            Size.Width = 65.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            Text = 'Hard'
+          end
+        end
+      end
+      object Label1: TLabel
+        StyledSettings = [Family, Size, Style]
+        Position.X = 72.000000000000000000
+        Position.Y = 48.000000000000000000
+        Size.Width = 129.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claCornsilk
+        Text = 'Izaberi Tezinu Treninga'
+        TabOrder = 2
+        object ShadowEffect1: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+    end
+    object TreningUTeretani: TButton
+      Position.X = 25.000000000000000000
+      Position.Y = 176.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Trening u Parku'
+      OnClick = TreningUTeretaniClick
+      object RadioButton1: TRadioButton
+        Position.Y = -47.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'Easy'
+        object RadioButton2: TRadioButton
+          Position.X = 112.000000000000000000
+          Size.Width = 65.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          Text = 'MIddle'
+          object RadioButton3: TRadioButton
+            Position.X = 104.000000000000000000
+            Size.Width = 65.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            Text = 'Hard'
+          end
+        end
+      end
+      object Label3: TLabel
+        StyledSettings = [Family, Size, Style]
+        Position.X = 72.000000000000000000
+        Position.Y = 48.000000000000000000
+        Size.Width = 129.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claCornsilk
+        Text = 'Izaberi Tezinu Treninga'
+        TabOrder = 2
+        object ShadowEffect5: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+    end
+    object TreningUKuci: TButton
+      Position.X = 25.000000000000000000
+      Position.Y = 288.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Trening u Kuci'
+      object RadioButton4: TRadioButton
+        Position.Y = -39.000000000000000000
+        Size.Width = 65.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'Easy'
+        object RadioButton5: TRadioButton
+          Position.X = 112.000000000000000000
+          Size.Width = 65.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          Text = 'MIddle'
+          object RadioButton6: TRadioButton
+            Position.X = 104.000000000000000000
+            Size.Width = 65.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            Text = 'Hard'
+          end
+        end
+      end
+      object Label2: TLabel
+        StyledSettings = [Family, Size, Style]
+        Position.X = 72.000000000000000000
+        Position.Y = 48.000000000000000000
+        Size.Width = 129.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claCornsilk
+        Text = 'Izaberi Tezinu Treninga'
+        TabOrder = 2
+        object ShadowEffect2: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+    end
+  end
+end

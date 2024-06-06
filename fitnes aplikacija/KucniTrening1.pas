@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.Layouts, FMX.StdCtrls, FMX.Effects, FMX.Controls.Presentation;
+  FMX.Layouts, FMX.StdCtrls, FMX.Effects, FMX.Controls.Presentation,NavigationManager;
 
 type
   TForm12 = class(TForm)
@@ -29,6 +29,7 @@ type
     ImageControl1: TImageControl;
     ImageControl2: TImageControl;
     ImageControl3: TImageControl;
+    procedure BackClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,5 +42,11 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TForm12.BackClick(Sender: TObject);
+begin
+ TNavigationManager.GoBack;
+ Form12.Close;
+end;
 
 end.
