@@ -5,15 +5,35 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Objects;
+  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, FMX.Effects;
 
 type
   Tvezbe1 = class(TForm)
-    Image1: TImage;
-    teretana: TButton;
-    naslov: TLabel;
-    Button1: TButton;
-    Button2: TButton;
+    Pozadina: TLayout;
+    BackGround: TRectangle;
+    GornjDeo: TLayout;
+    Back: TButton;
+    Label5: TLabel;
+    ShadowEffect7: TShadowEffect;
+    Layout1: TLayout;
+    TreningTeretana: TButton;
+    TreningUTeretani: TButton;
+    TreningUKuci: TButton;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    RadioButton4: TRadioButton;
+    RadioButton5: TRadioButton;
+    RadioButton6: TRadioButton;
+    RadioButton7: TRadioButton;
+    RadioButton8: TRadioButton;
+    RadioButton9: TRadioButton;
+    Label3: TLabel;
+    ShadowEffect5: TShadowEffect;
+    Label1: TLabel;
+    ShadowEffect1: TShadowEffect;
+    Label2: TLabel;
+    ShadowEffect2: TShadowEffect;
   private
     { Private declarations }
   public
