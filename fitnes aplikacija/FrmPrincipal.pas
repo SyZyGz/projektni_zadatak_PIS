@@ -117,10 +117,10 @@ begin
 end;
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-  // Provera da li je forma već kreirana
   if not Assigned(vezbe1) then
-    vezbe1 := Tvezbe1.Create(Application); // Kreiranje instance forme
-  vezbe1.Show; // Prikazivanje forme
+    vezbe1 := Tvezbe1.Create(Application);
+  vezbe1.Show;
+  Form1.Close;
 end;
 procedure TForm1.Circle5Click(Sender: TObject);
 begin
@@ -175,8 +175,8 @@ begin
      if not Assigned(Form7) then
     Form7 := TForm7.Create(Self);
   Form7Opened := True;
-  Close;
   Form7.Show;
+  Form1.Close;
 end;
 
 procedure TForm1.TreningClick(Sender: TObject);
@@ -184,8 +184,8 @@ begin
   if not Assigned(Form5) then
     Form5 := TForm5.Create(Self);
   Form5Opened := True;
-  Close;
   Form5.Show;
+  Form1.Close;
 end;
 end.
 

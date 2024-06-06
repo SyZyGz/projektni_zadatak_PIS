@@ -53,6 +53,7 @@ object vezbe1: Tvezbe1
       Size.PlatformDefault = False
       TabOrder = 1
       Text = '<--'
+      OnClick = BackClick
     end
     object Label5: TLabel
       StyledSettings = []
@@ -91,6 +92,7 @@ object vezbe1: Tvezbe1
       Size.PlatformDefault = False
       TabOrder = 2
       Text = 'Trening u Teretani'
+      OnClick = TreningTeretanaClick
       object RadioButton7: TRadioButton
         Position.Y = 305.000000000000000000
         Size.Width = 65.000000000000000000
@@ -142,6 +144,7 @@ object vezbe1: Tvezbe1
       Size.PlatformDefault = False
       TabOrder = 1
       Text = 'Trening u Parku'
+      OnClick = TreningUTeretaniClick
       object RadioButton1: TRadioButton
         Position.Y = -47.000000000000000000
         Size.Width = 65.000000000000000000
@@ -193,6 +196,7 @@ object vezbe1: Tvezbe1
       Size.PlatformDefault = False
       TabOrder = 0
       Text = 'Trening u Kuci'
+      OnClick = TreningUKuciClick
       object RadioButton4: TRadioButton
         Position.Y = -39.000000000000000000
         Size.Width = 65.000000000000000000
