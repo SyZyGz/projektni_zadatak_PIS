@@ -7,11 +7,13 @@ interface
     class procedure GoToBack;
     class procedure GoToBiceps;
     class procedure GoBack;
+    class procedure GoToProducts;
+    class procedure GoToInventory;
   end;
 implementation
 
 uses
-  Cardio, Back, Trening,FrmPrincipal;
+  Cardio, Back, Trening,FrmPrincipal, UProizvodi, PlacanjeProizvoda;
 
    class procedure TNavigationManager.GoToCardio;
 begin
@@ -33,6 +35,15 @@ class procedure TNavigationManager.GoBack;
 begin
          Form1.Show;
 end;
+class procedure TNavigationManager.GoToProducts;
+begin
+         Form7.Show;
+end;
+class procedure TNavigationManager.GoToInventory;
+begin
+         Form8.Show;
+end;
+
 
 end.
 
