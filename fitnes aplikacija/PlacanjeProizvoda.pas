@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.Layouts, FMX.Effects, FMX.StdCtrls, FMX.Controls.Presentation, FMX.Edit;
+  FMX.Layouts, FMX.Effects, FMX.StdCtrls, FMX.Controls.Presentation, FMX.Edit, NavigationManager;
 
 type
   TForm8 = class(TForm)
@@ -42,6 +42,7 @@ type
     Label6: TLabel;
     ShadowEffect8: TShadowEffect;
     PoruciOdmah: TButton;
+    procedure BackClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,5 +55,11 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TForm8.BackClick(Sender: TObject);
+begin
+      TNavigationManager.GoToProducts;
+      Form8.Close;
+end;
 
 end.

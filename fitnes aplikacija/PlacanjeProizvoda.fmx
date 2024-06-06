@@ -4,6 +4,7 @@
   Caption = 'Form8'
   ClientHeight = 584
   ClientWidth = 384
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -52,6 +53,7 @@
       Size.PlatformDefault = False
       TabOrder = 1
       Text = '<--'
+      OnClick = BackClick
     end
     object Label5: TLabel
       StyledSettings = []

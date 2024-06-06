@@ -2,15 +2,16 @@ object Form7: TForm7
   Left = 0
   Top = 0
   Caption = 'Form7'
-  ClientHeight = 584
-  ClientWidth = 384
+  ClientHeight = 508
+  ClientWidth = 360
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
   object Pozadina: TLayout
     Align = Top
-    Size.Width = 384.000000000000000000
+    Size.Width = 360.000000000000000000
     Size.Height = 584.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -31,7 +32,7 @@ object Form7: TForm7
       Fill.Gradient.StopPosition.X = 0.681985139846801800
       Fill.Gradient.StopPosition.Y = 0.000000012136453620
       HitTest = False
-      Size.Width = 384.000000000000000000
+      Size.Width = 360.000000000000000000
       Size.Height = 584.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
@@ -39,7 +40,7 @@ object Form7: TForm7
   end
   object SlikeProizvoda: TLayout
     Position.X = 24.000000000000000000
-    Position.Y = 72.000000000000000000
+    Position.Y = 58.000000000000000000
     Size.Width = 121.000000000000000000
     Size.Height = 369.000000000000000000
     Size.PlatformDefault = False
@@ -34089,23 +34090,24 @@ object Form7: TForm7
   end
   object donjiDeo: TLayout
     Position.X = 24.000000000000000000
-    Position.Y = 488.000000000000000000
+    Position.Y = 459.000000000000000000
     Size.Width = 321.000000000000000000
-    Size.Height = 65.000000000000000000
+    Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     object PogledajKorpu: TButton
       Position.X = 8.000000000000000000
-      Position.Y = 24.000000000000000000
+      Position.Y = 8.000000000000000000
       Size.Width = 136.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       Text = 'PREGLEDAJ KORPU'
+      OnClick = PogledajKorpuClick
     end
     object PoruciOdmah: TButton
       Position.X = 177.000000000000000000
-      Position.Y = 24.000000000000000000
+      Position.Y = 8.000000000000000000
       Size.Width = 136.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
@@ -34115,7 +34117,7 @@ object Form7: TForm7
   end
   object TextSaDugmadima1: TLayout
     Position.X = 153.000000000000000000
-    Position.Y = 80.000000000000000000
+    Position.Y = 66.000000000000000000
     Size.Width = 192.000000000000000000
     Size.Height = 112.000000000000000000
     Size.PlatformDefault = False
@@ -34176,17 +34178,19 @@ object Form7: TForm7
       Size.PlatformDefault = False
       TabOrder = 2
       Text = 'DODAJ U KORPU'
+      OnClick = Button1Click
     end
   end
   object TextSaDugmadima2: TLayout
     Position.X = 145.000000000000000000
-    Position.Y = 224.000000000000000000
+    Position.Y = 211.000000000000000000
     Size.Width = 200.000000000000000000
     Size.Height = 112.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    object Label1: TLabel
+    object Z: TLabel
       StyledSettings = []
+      Position.X = 8.000000000000000000
       Size.Width = 161.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
@@ -34241,11 +34245,12 @@ object Form7: TForm7
       Size.PlatformDefault = False
       TabOrder = 2
       Text = 'DODAJ U KORPU'
+      OnClick = Button2Click
     end
   end
   object TextSaDugmadima3: TLayout
-    Position.X = 145.000000000000000000
-    Position.Y = 353.000000000000000000
+    Position.X = 152.000000000000000000
+    Position.Y = 339.000000000000000000
     Size.Width = 200.000000000000000000
     Size.Height = 112.000000000000000000
     Size.PlatformDefault = False
@@ -34306,11 +34311,12 @@ object Form7: TForm7
       Size.PlatformDefault = False
       TabOrder = 2
       Text = 'DODAJ U KORPU'
+      OnClick = Button3Click
     end
   end
   object GornjiDeo: TLayout
-    Position.X = 16.000000000000000000
-    Position.Y = 14.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
     Size.Width = 360.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
@@ -34323,6 +34329,7 @@ object Form7: TForm7
       Size.PlatformDefault = False
       TabOrder = 1
       Text = '<--'
+      OnClick = BackClick
     end
     object Label5: TLabel
       StyledSettings = []
