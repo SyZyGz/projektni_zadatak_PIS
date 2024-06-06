@@ -8,6 +8,7 @@ object database: Tdatabase
       
         'Database=C:\Users\pc\OneDrive\Desktop\repository\projektni_zadat' +
         'ak_PIS\fitnes aplikacija\database\FitnessApp.db3')
+    Connected = True
     LoginPrompt = False
     Left = 176
     Top = 88

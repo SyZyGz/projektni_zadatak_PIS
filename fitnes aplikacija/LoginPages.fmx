@@ -167,7 +167,7 @@ object Login: TLogin
           TextSettings.FontColor = claBlue
           TextSettings.HorzAlign = Trailing
           Text = 'Forgot Password'
-          TabOrder = 4
+          TabOrder = 3
         end
       end
     end
