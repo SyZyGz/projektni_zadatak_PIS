@@ -248,6 +248,10 @@
             <Form>Form12</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="SignUP.pas">
+            <Form>Form11</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <None Include="database\FitnessApp.db3"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
