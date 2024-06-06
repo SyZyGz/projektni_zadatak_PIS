@@ -1,6 +1,7 @@
 object database: Tdatabase
-  Height = 355
-  Width = 381
+  Height = 444
+  Width = 476
+  PixelsPerInch = 120
   object FDConnection1: TFDConnection
     Params.Strings = (
       'DriverID=SQLite'
@@ -8,15 +9,15 @@ object database: Tdatabase
         'Database=C:\Users\pc\OneDrive\Desktop\repository\projektni_zadat' +
         'ak_PIS\fitnes aplikacija\database\FitnessApp.db3')
     LoginPrompt = False
-    Left = 141
-    Top = 70
+    Left = 176
+    Top = 88
   end
   object FDQuery1: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'select * from users'
       '')
-    Left = 128
-    Top = 211
+    Left = 160
+    Top = 264
   end
 end

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/06/05 21:04:31.000.466,=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit7.pas</Transaction>
+    <Transaction>2024/06/05 21:34:10.000.113,C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\UProizvodi.fmx=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit7.fmx</Transaction>
+    <Transaction>2024/06/05 21:34:10.000.113,C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\UProizvodi.pas=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit7.pas</Transaction>
+    <Transaction>2024/06/06 00:53:18.000.971,=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit8.pas</Transaction>
+    <Transaction>2024/06/06 01:18:57.000.152,C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit8.pas=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\PlacanjeProizvoda.pas</Transaction>
+    <Transaction>2024/06/06 01:18:57.000.152,C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\Unit8.fmx=C:\Users\User\Desktop\PIS mrtvi\projektni_zadatak_PIS\fitnes aplikacija\PlacanjeProizvoda.fmx</Transaction>
+  </Transactions>
+</BorlandProject>
