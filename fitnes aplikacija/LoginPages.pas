@@ -1,11 +1,13 @@
-unit LoginPages;
+﻿unit LoginPages;
 
 interface
+
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
   FMX.StdCtrls, FMX.Objects, FMX.Filter.Effects, FMX.Controls.Presentation,
-  FMX.Layouts, FMX.Edit, FrmPrincipal; // Dodaj FrmPrincipal unit ovde
+  FMX.Layouts, FMX.Edit, FrmPrincipal, databaseForm; // Dodaj databaseForm unit ovde
+
 type
   TLogin = class(TForm)
     Layout2: TLayout;
@@ -37,15 +39,46 @@ type
   public
     { Public declarations }
   end;
+
 var
   Login: TLogin;
+
 implementation
+
 {$R *.fmx}
+
 procedure TLogin.LoginButtonClick(Sender: TObject);
+var
+  Username, Password: string;
 begin
-  if not Assigned(Form1) then
-    Form1 := TForm1.Create(Self);
-  Hide;
-  Form1.Show;
+  Username := Edit1.Text;
+  Password := Edit2.Text;
+
+  // Podesi konekciju ako već nije povezana
+  if not database.FDConnection1.Connected then
+    database.FDConnection1.Connected := True;
+
+  // Pripremi SQL upit za proveru korisnika
+  database.FDQuery1.SQL.Text := 'SELECT COUNT(*) AS UserCount FROM users WHERE username = :username AND password = :password';
+  database.FDQuery1.ParamByName('username').AsString := Username;
+  database.FDQuery1.ParamByName('password').AsString := Password;
+
+  database.FDQuery1.Open;
+
+  if database.FDQuery1.FieldByName('UserCount').AsInteger > 0 then
+  begin
+    if not Assigned(Form1) then
+      Form1 := TForm1.Create(Self);
+    Hide;
+    Form1.Show;
+  end
+  else
+  begin
+    ShowMessage('Invalid username or password.');
+  end;
+
+  database.FDQuery1.Close;
 end;
+
 end.
+
