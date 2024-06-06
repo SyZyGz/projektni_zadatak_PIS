@@ -1,0 +1,193 @@
+object Form11: TForm11
+  Left = 0
+  Top = 0
+  Caption = 'Form11'
+  ClientHeight = 584
+  ClientWidth = 386
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Pozadina: TLayout
+    Align = Top
+    Size.Width = 386.000000000000000000
+    Size.Height = 584.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object BackGround: TRectangle
+      Align = Contents
+      Fill.Kind = Gradient
+      Fill.Gradient.Points = <
+        item
+          Color = xFF6596E7
+          Offset = 0.000000000000000000
+        end
+        item
+          Color = xFF2EDA93
+          Offset = 1.000000000000000000
+        end>
+      Fill.Gradient.StartPosition.X = 0.318014889955520600
+      Fill.Gradient.StartPosition.Y = 1.000000000000000000
+      Fill.Gradient.StopPosition.X = 0.681985139846801800
+      Fill.Gradient.StopPosition.Y = 0.000000012136453620
+      HitTest = False
+      Size.Width = 386.000000000000000000
+      Size.Height = 584.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+  end
+  object GornjiDeo: TLayout
+    Position.X = 24.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 329.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Back: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 41.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = '<--'
+    end
+  end
+  object Layout1: TLayout
+    Position.X = 24.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 329.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object LoginHeader: TLabel
+      StyledSettings = []
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 30.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claBeige
+      Text = 'Sign Up'
+      TabOrder = 0
+      object ShadowEffect1: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+      object Alredyamember: TLabel
+        StyledSettings = []
+        Position.Y = 33.000000000000000000
+        Size.Width = 169.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Montserrat'
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claBeige
+        Text = 'Already a member?'
+        TabOrder = 0
+        object ShadowEffect2: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.200000002980232200
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+      object Button1: TButton
+        Position.Y = 400.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 46.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Sign UP'
+      end
+    end
+    object Login: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 185.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'Login'
+      TabOrder = 3
+    end
+  end
+  object PoljaZaUpis: TLayout
+    Position.X = 24.000000000000000000
+    Position.Y = 185.000000000000000000
+    Size.Width = 329.000000000000000000
+    Size.Height = 208.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object PoljeZaEmail: TLayout
+      Position.X = 8.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.Y = -6.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Username: TLabel
+        StyledSettings = [Family, Size, Style]
+        Position.Y = -31.000000000000000000
+        TextSettings.FontColor = claCornsilk
+        Text = 'Username'
+        TabOrder = 2
+        object ShadowEffect4: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+    end
+    object Layout2: TLayout
+      Position.X = 8.000000000000000000
+      Position.Y = 96.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object Edit2: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.Y = 8.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Password: TLabel
+        StyledSettings = [Family, Size, Style]
+        Position.Y = -22.000000000000000000
+        TextSettings.FontColor = claCornsilk
+        Text = 'Password'
+        TabOrder = 2
+        object ShadowEffect3: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+      end
+    end
+  end
+end
