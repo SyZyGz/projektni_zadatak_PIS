@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
   FMX.StdCtrls, FMX.Objects, FMX.Filter.Effects, FMX.Controls.Presentation,
-  FMX.Layouts, FMX.Edit, FrmPrincipal, databaseForm; // Dodaj databaseForm unit ovde
+  FMX.Layouts, FMX.Edit, FrmPrincipal, databaseForm,SignUp; // Dodaj databaseForm unit ovde
 
 type
   TLogin = class(TForm)
@@ -23,8 +23,6 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     PasswordEditButton1: TPasswordEditButton;
-    Label3: TLabel;
-    ShadowEffect3: TShadowEffect;
     LoginButton: TButton;
     Email: TLabel;
     Password: TLabel;
@@ -32,7 +30,9 @@ type
     ShadowEffect5: TShadowEffect;
     SignUP: TLabel;
     ForgotPassword: TLabel;
+    Button2: TButton;
     procedure LoginButtonClick(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
     Form1: TForm1; // Deklaracija promenljive Form1
@@ -42,10 +42,20 @@ type
 
 var
   Login: TLogin;
+  Form11Opened: Boolean=False;
 
 implementation
 
 {$R *.fmx}
+
+procedure TLogin.Button2Click(Sender: TObject);
+begin
+if not Assigned(Form11) then
+      Form11 := TForm11.Create(Self);
+    Form11Opened := True;
+    Form11.Show;
+    Form1.Close;
+end;
 
 procedure TLogin.LoginButtonClick(Sender: TObject);
 var
@@ -63,22 +73,24 @@ begin
   database.FDQuery1.ParamByName('username').AsString := Username;
   database.FDQuery1.ParamByName('password').AsString := Password;
 
-  database.FDQuery1.Open;
+  try
+    database.FDQuery1.Open;
 
-  if database.FDQuery1.FieldByName('UserCount').AsInteger > 0 then
-  begin
-    if not Assigned(Form1) then
-      Form1 := TForm1.Create(Self);
-    Hide;
-    Form1.Show;
-  end
-  else
-  begin
-    ShowMessage('Invalid username or password.');
+    if database.FDQuery1.FieldByName('UserCount').AsInteger > 0 then
+    begin
+      if not Assigned(Form1) then
+        Form1 := TForm1.Create(Self);
+      Hide;
+      Form1.Show;
+    end
+    else
+    begin
+      ShowMessage('Invalid username or password.');
+    end;
+  finally
+    database.FDQuery1.Close; // Osigurajte da upit bude zatvoren
   end;
-
-  database.FDQuery1.Close;
 end;
-
 end.
+
 

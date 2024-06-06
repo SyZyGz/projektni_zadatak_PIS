@@ -75,26 +75,6 @@ object Login: TLogin
             Opacity = 0.600000023841857900
             ShadowColor = claBlack
           end
-          object Label3: TLabel
-            StyledSettings = []
-            Position.Y = 256.000000000000000000
-            Size.Width = 73.000000000000000000
-            Size.Height = 33.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Family = 'Montserrat'
-            TextSettings.Font.Size = 16.000000000000000000
-            TextSettings.Font.StyleExt = {00070000000000000004000000}
-            TextSettings.FontColor = claBeige
-            Text = 'Sign In'
-            TabOrder = 0
-            object ShadowEffect3: TShadowEffect
-              Distance = 3.000000000000000000
-              Direction = 45.000000000000000000
-              Softness = 0.200000002980232200
-              Opacity = 0.600000023841857900
-              ShadowColor = claBlack
-            end
-          end
         end
       end
       object Edit1: TEdit
@@ -169,6 +149,16 @@ object Login: TLogin
           Text = 'Forgot Password'
           TabOrder = 3
         end
+      end
+      object Button2: TButton
+        Position.X = 41.000000000000000000
+        Position.Y = 473.000000000000000000
+        Size.Width = 88.000000000000000000
+        Size.Height = 29.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'SIGN UP'
+        OnClick = Button2Click
       end
     end
     object Layout3: TLayout

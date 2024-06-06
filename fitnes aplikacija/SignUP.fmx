@@ -3,14 +3,14 @@ object Form11: TForm11
   Top = 0
   Caption = 'Form11'
   ClientHeight = 584
-  ClientWidth = 386
+  ClientWidth = 388
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
   object Pozadina: TLayout
     Align = Top
-    Size.Width = 386.000000000000000000
+    Size.Width = 388.000000000000000000
     Size.Height = 584.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -31,7 +31,7 @@ object Form11: TForm11
       Fill.Gradient.StopPosition.X = 0.681985139846801800
       Fill.Gradient.StopPosition.Y = 0.000000012136453620
       HitTest = False
-      Size.Width = 386.000000000000000000
+      Size.Width = 388.000000000000000000
       Size.Height = 584.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
@@ -108,6 +108,7 @@ object Form11: TForm11
         Size.PlatformDefault = False
         TabOrder = 4
         Text = 'Sign UP'
+        OnClick = Button1Click
       end
     end
     object Login: TLabel
