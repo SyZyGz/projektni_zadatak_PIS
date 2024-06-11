@@ -2,8 +2,8 @@ object dodavanjeTezine: TdodavanjeTezine
   Left = 0
   Top = 0
   Caption = 'UnosTezine'
-  ClientHeight = 581
-  ClientWidth = 381
+  ClientHeight = 580
+  ClientWidth = 380
   Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -51,8 +51,8 @@ object dodavanjeTezine: TdodavanjeTezine
       Size.Height = 90.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 6
-      Viewport.Width = 341.000000000000000000
-      Viewport.Height = 90.000000000000000000
+      Viewport.Width = 337.000000000000000000
+      Viewport.Height = 86.000000000000000000
     end
     object CuvanjeTezine: TButton
       Position.X = 216.000000000000000000
@@ -72,7 +72,6 @@ object dodavanjeTezine: TdodavanjeTezine
       Size.PlatformDefault = False
       TabOrder = 7
       Text = 'nazad'
-      OnClick = Button2Click
     end
     object Calendar1: TCalendar
       Date = 45419.000000000000000000
@@ -145,6 +144,13 @@ object dodavanjeTezine: TdodavanjeTezine
         Opacity = 0.600000023841857900
         ShadowColor = claBlack
       end
+    end
+    object Button1: TButton
+      Position.X = 224.000000000000000000
+      Position.Y = 296.000000000000000000
+      TabOrder = 8
+      Text = 'prikazi tezinu'
+      OnClick = Button1Click
     end
   end
 end

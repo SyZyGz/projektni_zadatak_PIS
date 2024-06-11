@@ -1,0 +1,119 @@
+﻿unit Weight;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Memo.Types,
+  FMX.ScrollBox, FMX.Memo, FMX.Calendar, FMX.StdCtrls, FMX.Edit,
+  FMX.Controls.Presentation, FMX.Layouts, FMX.Objects, FMX.Effects, NavigationManager,databaseForm ;
+
+type
+  TdodavanjeTezine = class(TForm)
+    Edit1: TEdit;
+    CuvanjeTezine: TButton;
+    Calendar1: TCalendar;
+    Memo1: TMemo;
+    Layout1: TLayout;
+    Pozadina: TRectangle;
+    Layout2: TLayout;
+    IzaberiDatumMerenja: TLabel;
+    ShadowEffect2: TShadowEffect;
+    UnesiteTrenutnuTezinu: TLabel;
+    ShadowEffect1: TShadowEffect;
+    StatistikaMerenja: TLabel;
+    ShadowEffect3: TShadowEffect;
+    Button1: TButton;
+    procedure CuvanjeTezineClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+
+  private
+    { Private declarations }
+     //FPrethodnaForma: TForm1; // Polje za čuvanje reference na prethodnu formu
+  public
+    { Public declarations }
+    //constructor Create(AOwner: TComponent; PrethodnaForma: TForm1); reintroduce; overload;
+  end;
+
+var
+  dodavanjeTezine: TdodavanjeTezine;
+
+implementation
+
+{$R *.fmx}
+
+procedure TdodavanjeTezine.Button1Click(Sender: TObject);
+var
+  Datum: TDate;
+  Tezina: Double;
+begin
+  Datum := Calendar1.Date;
+
+  // Podesi konekciju ako već nije povezana
+  if not database.FDConnection1.Connected then
+    database.FDConnection1.Connected := True;
+
+  try
+    // Pripremi SQL upit za dohvaćanje težine za odabrani datum
+    database.FDQuery1.SQL.Text := 'SELECT tezina FROM tezina WHERE datum = :datum';
+    database.FDQuery1.ParamByName('datum').AsDate := Datum;
+    database.FDQuery1.Open;
+
+    if not database.FDQuery1.IsEmpty then
+    begin
+      Tezina := database.FDQuery1.FieldByName('tezina').AsFloat;
+      ShowMessage('Težina za datum ' + DateToStr(Datum) + ' je ' + FloatToStr(Tezina) + ' kg.');
+    end
+    else
+    begin
+      ShowMessage('Nema unosa za izabrani datum.');
+    end;
+  except
+    on E: Exception do
+      ShowMessage('Error: ' + E.Message);
+  end;
+
+  database.FDQuery1.Close;
+end;
+
+
+
+procedure TdodavanjeTezine.CuvanjeTezineClick(Sender: TObject);
+//procedure TdodavanjeTezine.ButtonPrikaziTezinuClick(Sender: TObject);
+var
+  Datum: TDate;
+  Tezina: Double;
+begin
+  Datum := Calendar1.Date;
+
+  // Podesi konekciju ako već nije povezana
+  if not database.FDConnection1.Connected then
+    database.FDConnection1.Connected := True;
+
+  try
+    // Pripremi SQL upit za dohvaćanje težine za odabrani datum
+    database.FDQuery1.SQL.Text := 'SELECT tezina FROM tezina WHERE datum = :datum';
+    database.FDQuery1.ParamByName('datum').AsDate := Datum;
+    database.FDQuery1.Open;
+
+    if not database.FDQuery1.IsEmpty then
+    begin
+      Tezina := database.FDQuery1.FieldByName('tezina').AsFloat;
+      ShowMessage('Težina za datum ' + DateToStr(Datum) + ' je ' + FloatToStr(Tezina) + ' kg.');
+    end
+    else
+    begin
+      ShowMessage('Nema unosa za izabrani datum.');
+    end;
+  except
+    on E: Exception do
+      ShowMessage('Error: ' + E.Message);
+  end;
+
+  database.FDQuery1.Close;
+end;
+
+
+
+
+end.
