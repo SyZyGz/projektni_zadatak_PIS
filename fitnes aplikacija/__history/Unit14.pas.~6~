@@ -1,0 +1,85 @@
+﻿unit Unit14;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls, databaseForm;
+
+type
+  TForm14 = class(TForm)
+    Edit1: TEdit; // Ime
+    Edit2: TEdit; // Tezina
+    Edit3: TEdit; // Ponavljanja
+    Edit4: TEdit; // Opterecenje
+    Edit5: TEdit; // Ukljuceni Misici
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel; // Labela za Ukljuceni Misici
+    Button1: TButton; // Dugme za unos u vezba
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form14: TForm14;
+
+implementation
+
+{$R *.fmx}
+
+procedure TForm14.Button1Click(Sender: TObject);
+var
+  Ime, Tezina, Ponavljanja, Opterecenje, Ukljuceni_misici: string;
+begin
+  Ime := Edit1.Text;
+  Tezina := Edit2.Text;
+  Ponavljanja := Edit3.Text;
+  Opterecenje := Edit4.Text;
+  Ukljuceni_misici := Edit5.Text;
+
+  // Validacija unosa
+  if (Ime = '') or (Tezina = '') or (Ponavljanja = '') or (Opterecenje = '') or (Ukljuceni_misici = '') then
+  begin
+    ShowMessage('Sva polja moraju biti popunjena.');
+    Exit;
+  end;
+
+  // Podesi konekciju ako već nije povezana
+  if not database.FDConnection1.Connected then
+    database.FDConnection1.Connected := True;
+
+  try
+    // Pripremi SQL upit za unos podataka
+    database.FDQuery1.SQL.Text := 'INSERT INTO vezba (ime, tezina, ponavljanja, opterecenje, ukljuceni_misici) VALUES (:ime, :tezina, :ponavljanja, :opterecenje, :ukljuceni_misici)';
+    database.FDQuery1.ParamByName('ime').AsString := Ime;
+    database.FDQuery1.ParamByName('tezina').AsString := Tezina;
+    database.FDQuery1.ParamByName('ponavljanja').AsString := Ponavljanja;
+    database.FDQuery1.ParamByName('opterecenje').AsString := Opterecenje;
+    database.FDQuery1.ParamByName('ukljuceni_misici').AsString := Ukljuceni_misici;
+
+    // Izvrši SQL upit
+    database.FDQuery1.ExecSQL;
+
+    // Pokaži poruku o uspešnom unosu
+    ShowMessage('Podaci su uspešno uneseni u tabelu vezba.');
+
+    // Očisti polja za unos
+    Edit1.Text := '';
+    Edit2.Text := '';
+    Edit3.Text := '';
+    Edit4.Text := '';
+    Edit5.Text := '';
+  except
+    on E: Exception do
+      ShowMessage('Error: ' + E.Message);
+  end;
+end;
+
+end.
+

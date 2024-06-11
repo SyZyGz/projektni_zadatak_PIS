@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Effects,
   FMX.StdCtrls, FMX.Objects, FMX.Filter.Effects, FMX.Controls.Presentation,
-  FMX.Layouts, FMX.Edit, FrmPrincipal, databaseForm,SignUp; // Dodaj databaseForm unit ovde
+  FMX.Layouts, FMX.Edit, FrmPrincipal, databaseForm,SignUp, Unit13; // Dodaj databaseForm unit ovde
 
 type
   TLogin = class(TForm)
@@ -28,11 +28,13 @@ type
     Password: TLabel;
     ShadowEffect4: TShadowEffect;
     ShadowEffect5: TShadowEffect;
-    SignUP: TLabel;
-    ForgotPassword: TLabel;
     Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
     procedure LoginButtonClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
     Form1: TForm1; // Deklaracija promenljive Form1
@@ -43,6 +45,7 @@ type
 var
   Login: TLogin;
   Form11Opened: Boolean=False;
+  ResetOpened: Boolean= False;
 
 implementation
 
@@ -54,7 +57,31 @@ if not Assigned(Form11) then
       Form11 := TForm11.Create(Self);
     Form11Opened := True;
     Form11.Show;
-    Form1.Close;
+
+end;
+
+procedure TLogin.Button3Click(Sender: TObject);
+begin
+if not database.FDConnection1.Connected then
+    database.FDConnection1.Connected := True;
+  // Pripremi SQL upit za brisanje svih korisnika
+  database.FDQuery1.SQL.Text := 'DELETE FROM users';
+  try
+    database.FDQuery1.ExecSQL;
+    ShowMessage('All users have been deleted.');
+  except
+    on E: Exception do
+      ShowMessage('Error: ' + E.Message);
+  end;
+end;
+
+procedure TLogin.Button4Click(Sender: TObject);
+begin
+             if not Assigned(Reset) then
+      Reset := TReset.Create(Self);
+    ResetOpened := True;
+    Reset.Show;
+
 end;
 
 procedure TLogin.LoginButtonClick(Sender: TObject);

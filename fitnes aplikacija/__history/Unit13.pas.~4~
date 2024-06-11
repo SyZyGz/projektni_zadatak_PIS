@@ -1,0 +1,77 @@
+﻿unit Unit13;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Edit, FMX.Effects, FMX.StdCtrls, FMX.Controls.Presentation, FMX.Layouts,databaseForm;
+
+type
+  TReset = class(TForm)
+    Pozadina: TLayout;
+    BackGround: TRectangle;
+    PoljaZaUpis: TLayout;
+    PoljeZaEmail: TLayout;
+    Edit1: TEdit;
+    Username: TLabel;
+    ShadowEffect4: TShadowEffect;
+    Layout2: TLayout;
+    Edit2: TEdit;
+    Password: TLabel;
+    ShadowEffect3: TShadowEffect;
+    Edit3: TEdit;
+    Label1: TLabel;
+    ShadowEffect1: TShadowEffect;
+    Label2: TLabel;
+    ShadowEffect2: TShadowEffect;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Reset: TReset;
+
+implementation
+
+{$R *.fmx}
+
+procedure TReset.Button1Click(Sender: TObject);
+begin
+      var
+  Username, CurrentPassword, NewPassword: string;
+begin
+  Username := Edit1.Text;
+  CurrentPassword := Edit2.Text;
+  NewPassword := Edit3.Text;
+
+  // Podesi konekciju ako već nije povezana
+  if not database.FDConnection1.Connected then
+    database.FDConnection1.Connected := True;
+
+  // Pripremi SQL upit za proveru korisnika i promenu lozinke
+  database.FDQuery1.SQL.Text := 'UPDATE users SET password = :newpassword WHERE username = :username AND password = :currentpassword';
+  database.FDQuery1.ParamByName('newpassword').AsString := NewPassword;
+  database.FDQuery1.ParamByName('username').AsString := Username;
+  database.FDQuery1.ParamByName('currentpassword').AsString := CurrentPassword;
+
+  try
+    database.FDQuery1.ExecSQL;
+    if database.FDQuery1.RowsAffected > 0 then
+      ShowMessage('Password changed successfully.')
+    else
+      ShowMessage('Invalid username or password.');
+    Close;
+  except
+    on E: Exception do
+      ShowMessage('Error: ' + E.Message);
+  end;
+end;
+end;
+
+end.
+

@@ -11,12 +11,13 @@ interface
     class procedure GoToWorkout;
     class procedure GoToPark;
     class procedure GoToHouse;
+    class procedure GoToLogin;
 
   end;
 implementation
 
 uses
-  Cardio, Back, Trening,FrmPrincipal, UProizvodi, PlacanjeProizvoda, teretanaTrening, ParkTrening, KucniTrening1;
+  Cardio, Back, Trening,FrmPrincipal, UProizvodi, PlacanjeProizvoda, teretanaTrening, ParkTrening, KucniTrening1 ,LoginPages;
 
    class procedure TNavigationManager.GoToCardio;
 begin
@@ -55,6 +56,9 @@ class procedure TNavigationManager.GoToHouse;
 begin
       Form12.Show;
 end;
-
+class procedure TNavigationManager.GoToLogin;
+begin
+  Login.Show;
+end;
 end.
 

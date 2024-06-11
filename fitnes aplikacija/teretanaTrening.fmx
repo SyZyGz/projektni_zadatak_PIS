@@ -3,7 +3,7 @@ object Form9: TForm9
   Top = 0
   Caption = 'Form9'
   ClientHeight = 584
-  ClientWidth = 384
+  ClientWidth = 680
   Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -11,7 +11,7 @@ object Form9: TForm9
   DesignerMasterStyle = 0
   object Pozadina: TLayout
     Align = Top
-    Size.Width = 384.000000000000000000
+    Size.Width = 680.000000000000000000
     Size.Height = 584.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -32,10 +32,28 @@ object Form9: TForm9
       Fill.Gradient.StopPosition.X = 0.681985139846801800
       Fill.Gradient.StopPosition.Y = 0.000000012136453620
       HitTest = False
-      Size.Width = 384.000000000000000000
+      Size.Width = 680.000000000000000000
       Size.Height = 584.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
+      object ListBox1: TListBox
+        Position.X = 400.000000000000000000
+        Position.Y = 80.000000000000000000
+        TabOrder = 0
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 196.000000000000000000
+        Viewport.Height = 196.000000000000000000
+      end
+      object Button3: TButton
+        Position.X = 432.000000000000000000
+        Position.Y = 344.000000000000000000
+        TabOrder = 1
+        Text = 'Button3'
+        OnClick = Button3Click
+      end
     end
   end
   object Slike: TLayout

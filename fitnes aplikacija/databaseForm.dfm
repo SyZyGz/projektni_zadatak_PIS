@@ -14,6 +14,7 @@ object database: Tdatabase
     Top = 88
   end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'select * from users'

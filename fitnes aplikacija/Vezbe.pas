@@ -1,11 +1,12 @@
-unit Vezbe;
+﻿unit Vezbe;
 
 interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, FMX.Effects, KucniTrening1,teretanaTrening, ParkTrening,  NavigationManager;
+  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, FMX.Effects, KucniTrening1,teretanaTrening, ParkTrening,  NavigationManager,
+  FMX.ListBox,Unit14;
 
 type
   Tvezbe1 = class(TForm)
@@ -34,10 +35,12 @@ type
     ShadowEffect1: TShadowEffect;
     Label2: TLabel;
     ShadowEffect2: TShadowEffect;
+    Button1: TButton;
     procedure TreningTeretanaClick(Sender: TObject);
     procedure BackClick(Sender: TObject);
     procedure TreningUTeretaniClick(Sender: TObject);
     procedure TreningUKuciClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,6 +61,15 @@ procedure Tvezbe1.BackClick(Sender: TObject);
 begin
       TNavigationManager.GoBack;
       vezbe1.Close;
+end;
+
+procedure Tvezbe1.Button1Click(Sender: TObject);
+begin
+  // Proverite da li je Form14 već kreiran
+  if not Assigned(Form14) then
+    Form14 := TForm14.Create(Self);
+  // Prikazivanje Form14
+  Form14.Show;
 end;
 
 procedure Tvezbe1.TreningTeretanaClick(Sender: TObject);

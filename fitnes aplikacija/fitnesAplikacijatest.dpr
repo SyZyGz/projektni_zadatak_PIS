@@ -17,7 +17,9 @@ uses
   teretanaTrening in 'teretanaTrening.pas' {Form9},
   ParkTrening in 'ParkTrening.pas' {Form10},
   KucniTrening1 in 'KucniTrening1.pas' {Form12},
-  SignUP in 'SignUP.pas' {Form11};
+  SignUP in 'SignUP.pas' {Form11},
+  Unit13 in 'Unit13.pas' {Reset},
+  Unit14 in 'Unit14.pas' {Form14};
 
 {$R *.res}
 
@@ -26,8 +28,8 @@ begin
   // Prvo kreiraj formu LoginForm
   Application.CreateForm(Tdatabase, database);
   Application.CreateForm(TLogin, Login);
-  Application.CreateForm(TForm12, Form12);
-  Application.CreateForm(TForm11, Form11);
+  Application.CreateForm(TReset, Reset);
+  Application.CreateForm(TForm14, Form14);
   // Zatim kreiraj ostale forme
   Application.CreateForm(TForm1, Form1);
   Application.Run;
