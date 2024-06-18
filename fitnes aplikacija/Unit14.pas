@@ -4,33 +4,35 @@ interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls, databaseForm, FMX.Effects,
-  FMX.Objects, FMX.Layouts;
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Edit, FMX.Effects, FMX.StdCtrls, FMX.Controls.Presentation, FMX.Layouts,
+  databaseForm;
 
 type
-  TForm14 = class(TForm)
-    Edit1: TEdit; // Ime
-    Edit2: TEdit; // Tezina
-    Edit3: TEdit; // Ponavljanja
-    Edit4: TEdit; // Opterecenje
-    Edit5: TEdit;
-    Label4: TLabel; // Labela za Ukljuceni Misici
-    Button1: TButton;
+  TReset = class(TForm)
     Pozadina: TLayout;
     S: TRectangle;
-    Layout1: TLayout;
+    PoljaZaUpis: TLayout;
+    PoljeZaEmail: TLayout;
+    Edit1: TEdit;
+    Username: TLabel;
+    ShadowEffect4: TShadowEffect;
     Layout2: TLayout;
-    Back: TButton;
-    Label5: TLabel;
-    ShadowEffect7: TShadowEffect;
-    IzaberiDatumMerenja: TLabel;
-    ShadowEffect2: TShadowEffect;
+    Edit2: TEdit;
+    Password: TLabel;
+    ShadowEffect3: TShadowEffect;
+    Edit3: TEdit;
     Label1: TLabel;
     ShadowEffect1: TShadowEffect;
     Label2: TLabel;
-    ShadowEffect3: TShadowEffect; // Dugme za unos u vezba
-    procedure Button1Click(Sender: TObject);
+    ShadowEffect2: TShadowEffect;
+    Button1: TButton;
+    GornjDeo: TLayout;
+    Back: TButton;
+    Label5: TLabel;
+    ShadowEffect7: TShadowEffect;
+    procedure Button1Click(Sender: TObject); // Procedura za promenu lozinke
+    procedure BackClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,59 +40,49 @@ type
   end;
 
 var
-  Form14: TForm14;
+  Reset: TReset;
 
 implementation
 
 {$R *.fmx}
 
-procedure TForm14.Button1Click(Sender: TObject);
-var
-  Ime, Tezina, Ponavljanja, Opterecenje, UkljuceniMisici: string;
+procedure TReset.BackClick(Sender: TObject);
 begin
-  Ime := Edit1.Text;
-  Tezina := Edit2.Text;
-  Ponavljanja := Edit3.Text;
-  Opterecenje := Edit4.Text;
-  UkljuceniMisici := Edit5.Text;
+  Close;
+end;
 
-  // Validacija unosa
-  {if (Ime = '') or (Tezina = '') or (Ponavljanja = '') or (Opterecenje = '') or (ukljuceni_misici = '') then
-  begin
-    ShowMessage('Sva polja moraju biti popunjena.');
-    Exit;
-  end;
-  }
+procedure TReset.Button1Click(Sender: TObject);
+var
+  Username, OldPassword, NewPassword: string;
+begin
+  Username := Edit1.Text;
+  OldPassword := Edit2.Text;
+  NewPassword := Edit3.Text;
 
-
-  // Podesi konekciju ako već nije povezana
   if not database.FDConnection1.Connected then
     database.FDConnection1.Connected := True;
 
+  // Proveri da li postojeći korisnik sa unetom starom lozinkom postoji
+  database.FDQuery1.SQL.Text := 'SELECT * FROM users WHERE username = :username AND password = :oldpassword';
+  database.FDQuery1.ParamByName('username').AsString := Username;
+  database.FDQuery1.ParamByName('oldpassword').AsString := OldPassword;
+  database.FDQuery1.Open;
+
   try
-    // Pripremi SQL upit za unos podataka
-    database.FDQuery1.SQL.Text := 'INSERT INTO vezba (ime, tezina, ponavljanja, opterecenje, UkljuceniMisici) VALUES (:ime, :tezina, :ponavljanja, :opterecenje, :UkljuceniMisici)';
-    database.FDQuery1.ParamByName('ime').AsString := Ime;
-    database.FDQuery1.ParamByName('tezina').AsString := Tezina;
-    database.FDQuery1.ParamByName('ponavljanja').AsString := Ponavljanja;
-    database.FDQuery1.ParamByName('opterecenje').AsString := Opterecenje;
-    database.FDQuery1.ParamByName('UkljuceniMisici').AsString := UkljuceniMisici;
-
-    // Izvrši SQL upit
-    database.FDQuery1.ExecSQL;
-
-    // Pokaži poruku o uspešnom unosu
-    ShowMessage('Podaci su uspešno uneseni u tabelu vezba.');
-
-    // Očisti polja za unos
-    Edit1.Text := '';
-    Edit2.Text := '';
-    Edit3.Text := '';
-    Edit4.Text := '';
-    Edit5.Text := '';
-  except
-    on E: Exception do
-      ShowMessage('Error: ' + E.Message);
+    if not database.FDQuery1.IsEmpty then
+    begin
+      // Korisnik postoji, izvrši promenu lozinke
+      database.FDQuery1.SQL.Text := 'UPDATE users SET password = :newpassword WHERE username = :username AND password = :oldpassword';
+      database.FDQuery1.ParamByName('newpassword').AsString := NewPassword;
+      database.FDQuery1.ExecSQL;
+      ShowMessage('Password successfully changed.');
+    end
+    else
+    begin
+      ShowMessage('Invalid username or password.');
+    end;
+  finally
+    database.FDQuery1.Close; // Osigurajte da upit bude zatvoren
   end;
 end;
 

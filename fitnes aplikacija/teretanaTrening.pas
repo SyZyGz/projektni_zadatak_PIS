@@ -10,28 +10,14 @@ uses
 
 type
   TForm9 = class(TForm)
-    ImageControl1: TImageControl;
-    ImageControl2: TImageControl;
-    ImageControl3: TImageControl;
     Pozadina: TLayout;
     BackGround: TRectangle;
-    Slike: TLayout;
+    ListBox1: TListBox;
+    Button3: TButton;
     GornjDeo: TLayout;
     Back: TButton;
     Label5: TLabel;
     ShadowEffect7: TShadowEffect;
-    LevaStrana: TLayout;
-    PogledajVideo: TButton;
-    Button1: TButton;
-    Button2: TButton;
-    BenchPress: TLabel;
-    ShadowEffect1: TShadowEffect;
-    Squat: TLabel;
-    ShadowEffect2: TShadowEffect;
-    DeadLIft: TLabel;
-    ShadowEffect3: TShadowEffect;
-    ListBox1: TListBox;
-    Button3: TButton;
     procedure BackClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
   private

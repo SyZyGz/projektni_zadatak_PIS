@@ -332,14 +332,15 @@
         <DCCReference Include="SignUP.pas">
             <Form>Form11</Form>
         </DCCReference>
-        <DCCReference Include="Unit13.pas">
+        <DCCReference Include="Unit14.pas">
             <Form>Reset</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="Unit14.pas">
+        <DCCReference Include="DodajVezbu.pas">
             <Form>Form14</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="GlobalVariables.pas"/>
         <None Include="database\FitnessApp.db3"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

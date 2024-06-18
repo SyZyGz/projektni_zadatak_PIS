@@ -5,8 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, FMX.Effects, KucniTrening1,teretanaTrening, ParkTrening,  NavigationManager,
-  FMX.ListBox,Unit14;
+  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, FMX.Effects, KucniTrening1, teretanaTrening, ParkTrening, NavigationManager,
+  FMX.ListBox, DodajVezbu, GlobalVariables;
 
 type
   Tvezbe1 = class(TForm)
@@ -35,12 +35,14 @@ type
     ShadowEffect1: TShadowEffect;
     Label2: TLabel;
     ShadowEffect2: TShadowEffect;
-    Button1: TButton;
+    Button1: TButton; // Dugme za dodavanje vežbi
     procedure TreningTeretanaClick(Sender: TObject);
     procedure BackClick(Sender: TObject);
     procedure TreningUTeretaniClick(Sender: TObject);
     procedure TreningUKuciClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    //procedure ButtonAddExerciseClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,22 +61,27 @@ implementation
 
 procedure Tvezbe1.BackClick(Sender: TObject);
 begin
-      TNavigationManager.GoBack;
-      vezbe1.Close;
+  TNavigationManager.GoBack;
+  vezbe1.Close;
 end;
 
 procedure Tvezbe1.Button1Click(Sender: TObject);
 begin
-  // Proverite da li je Form14 već kreiran
-  if not Assigned(Form14) then
-    Form14 := TForm14.Create(Self);
-  // Prikazivanje Form14
-  Form14.Show;
+  if CurrentUserPrivilege = 1 then
+  begin
+    if not Assigned(Form14) then
+      Form14 := TForm14.Create(Self);
+    Form14.Show;
+  end
+  else
+  begin
+    ShowMessage('You do not have permission to add exercises.');
+  end;
 end;
 
 procedure Tvezbe1.TreningTeretanaClick(Sender: TObject);
 begin
-       if not Assigned(Form9) then
+  if not Assigned(Form9) then
     Form9 := TForm9.Create(Self);
   Form9Opened := True;
   Close;
@@ -83,7 +90,7 @@ end;
 
 procedure Tvezbe1.TreningUKuciClick(Sender: TObject);
 begin
-           if not Assigned(Form12) then
+  if not Assigned(Form12) then
     Form12 := TForm12.Create(Self);
   Form12Opened := True;
   Close;
@@ -92,11 +99,18 @@ end;
 
 procedure Tvezbe1.TreningUTeretaniClick(Sender: TObject);
 begin
-        if not Assigned(Form10) then
+  if not Assigned(Form10) then
     Form10 := TForm10.Create(Self);
   Form10Opened := True;
   Close;
   Form10.Show;
 end;
 
+
+procedure Tvezbe1.FormShow(Sender: TObject);
+begin
+  // Ovde nije potrebno ništa menjati
+end;
+
 end.
+

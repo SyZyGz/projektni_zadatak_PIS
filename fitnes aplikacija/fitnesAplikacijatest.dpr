@@ -18,8 +18,9 @@ uses
   ParkTrening in 'ParkTrening.pas' {Form10},
   KucniTrening1 in 'KucniTrening1.pas' {Form12},
   SignUP in 'SignUP.pas' {Form11},
-  Unit13 in 'Unit13.pas' {Reset},
-  Unit14 in 'Unit14.pas' {Form14};
+  Unit14 in 'Unit14.pas' {Reset},
+  DodajVezbu in 'DodajVezbu.pas' {Form14},
+  GlobalVariables in 'GlobalVariables.pas';
 
 {$R *.res}
 
