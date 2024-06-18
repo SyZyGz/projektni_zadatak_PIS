@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls, databaseForm;
+  FMX.Controls.Presentation, FMX.Edit, FMX.StdCtrls, databaseForm, FMX.Effects,
+  FMX.Objects, FMX.Layouts;
 
 type
   TForm14 = class(TForm)
@@ -13,12 +14,22 @@ type
     Edit2: TEdit; // Tezina
     Edit3: TEdit; // Ponavljanja
     Edit4: TEdit; // Opterecenje
-    Edit5: TEdit; // Ukljuceni Misici
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
+    Edit5: TEdit;
     Label4: TLabel; // Labela za Ukljuceni Misici
-    Button1: TButton; // Dugme za unos u vezba
+    Button1: TButton;
+    Pozadina: TLayout;
+    S: TRectangle;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    Back: TButton;
+    Label5: TLabel;
+    ShadowEffect7: TShadowEffect;
+    IzaberiDatumMerenja: TLabel;
+    ShadowEffect2: TShadowEffect;
+    Label1: TLabel;
+    ShadowEffect1: TShadowEffect;
+    Label2: TLabel;
+    ShadowEffect3: TShadowEffect; // Dugme za unos u vezba
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }

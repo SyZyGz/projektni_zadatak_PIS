@@ -10,7 +10,7 @@ uses
 type
   TReset = class(TForm)
     Pozadina: TLayout;
-    BackGround: TRectangle;
+    S: TRectangle;
     PoljaZaUpis: TLayout;
     PoljeZaEmail: TLayout;
     Edit1: TEdit;
@@ -26,6 +26,10 @@ type
     Label2: TLabel;
     ShadowEffect2: TShadowEffect;
     Button1: TButton;
+    GornjDeo: TLayout;
+    Back: TButton;
+    Label5: TLabel;
+    ShadowEffect7: TShadowEffect;
   private
     { Private declarations }
   public

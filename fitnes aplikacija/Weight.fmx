@@ -146,10 +146,13 @@ object dodavanjeTezine: TdodavanjeTezine
       end
     end
     object Button1: TButton
-      Position.X = 224.000000000000000000
-      Position.Y = 296.000000000000000000
+      Position.X = 216.000000000000000000
+      Position.Y = 271.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
       TabOrder = 8
-      Text = 'prikazi tezinu'
+      Text = 'Prikazi tezinu'
       OnClick = Button1Click
     end
   end

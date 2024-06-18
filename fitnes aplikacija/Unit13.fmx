@@ -2,8 +2,8 @@ object Reset: TReset
   Left = 0
   Top = 0
   Caption = 'Reset'
-  ClientHeight = 484
-  ClientWidth = 360
+  ClientHeight = 584
+  ClientWidth = 384
   Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -11,11 +11,11 @@ object Reset: TReset
   DesignerMasterStyle = 0
   object Pozadina: TLayout
     Align = Top
-    Size.Width = 360.000000000000000000
+    Size.Width = 384.000000000000000000
     Size.Height = 584.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    object BackGround: TRectangle
+    object S: TRectangle
       Align = Contents
       Fill.Kind = Gradient
       Fill.Gradient.Points = <
@@ -32,7 +32,7 @@ object Reset: TReset
       Fill.Gradient.StopPosition.X = 0.681985139846801800
       Fill.Gradient.StopPosition.Y = 0.000000012136453620
       HitTest = False
-      Size.Width = 360.000000000000000000
+      Size.Width = 384.000000000000000000
       Size.Height = 584.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
@@ -40,7 +40,7 @@ object Reset: TReset
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         TabOrder = 0
         Position.X = 31.000000000000000000
-        Position.Y = 336.000000000000000000
+        Position.Y = 250.000000000000000000
         Size.Width = 313.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
@@ -63,7 +63,7 @@ object Reset: TReset
       object Label2: TLabel
         StyledSettings = [Family, Size, Style]
         Position.X = 31.000000000000000000
-        Position.Y = 311.000000000000000000
+        Position.Y = 225.000000000000000000
         TextSettings.FontColor = claCornsilk
         Text = 'New Password'
         TabOrder = 2
@@ -76,18 +76,21 @@ object Reset: TReset
         end
       end
       object Button1: TButton
-        Position.X = 264.000000000000000000
-        Position.Y = 392.000000000000000000
+        Position.X = 31.000000000000000000
+        Position.Y = 520.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
         TabOrder = 4
-        Text = 'Proceed'
+        Text = 'Changde Password'
       end
     end
   end
   object PoljaZaUpis: TLayout
     Position.X = 23.000000000000000000
-    Position.Y = 105.000000000000000000
+    Position.Y = 81.000000000000000000
     Size.Width = 329.000000000000000000
-    Size.Height = 208.000000000000000000
+    Size.Height = 128.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
     object PoljeZaEmail: TLayout
@@ -148,6 +151,44 @@ object Reset: TReset
           Opacity = 0.600000023841857900
           ShadowColor = claBlack
         end
+      end
+    end
+  end
+  object GornjDeo: TLayout
+    Position.X = 23.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 337.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Back: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 41.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = '<--'
+    end
+    object Label5: TLabel
+      StyledSettings = []
+      Position.X = 57.000000000000000000
+      Position.Y = 9.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claBeige
+      Text = 'Change Password'
+      TabOrder = 0
+      object ShadowEffect7: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
       end
     end
   end

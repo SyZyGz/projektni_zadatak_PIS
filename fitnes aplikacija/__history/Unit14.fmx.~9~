@@ -1,0 +1,187 @@
+object Form14: TForm14
+  Left = 0
+  Top = 0
+  Caption = 'Form14'
+  ClientHeight = 584
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Pozadina: TLayout
+    Align = Top
+    Size.Width = 384.000000000000000000
+    Size.Height = 584.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object S: TRectangle
+      Align = Contents
+      Fill.Kind = Gradient
+      Fill.Gradient.Points = <
+        item
+          Color = xFF6596E7
+          Offset = 0.000000000000000000
+        end
+        item
+          Color = xFF2EDA93
+          Offset = 1.000000000000000000
+        end>
+      Fill.Gradient.StartPosition.X = 0.318014889955520600
+      Fill.Gradient.StartPosition.Y = 1.000000000000000000
+      Fill.Gradient.StopPosition.X = 0.681985139846801800
+      Fill.Gradient.StopPosition.Y = 0.000000012136453620
+      HitTest = False
+      Size.Width = 384.000000000000000000
+      Size.Height = 584.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+  end
+  object Layout1: TLayout
+    Position.X = 23.000000000000000000
+    Position.Y = 66.000000000000000000
+    Size.Width = 338.000000000000000000
+    Size.Height = 407.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object Label4: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 272.000000000000000000
+      Text = 'ime'
+      TabOrder = 5
+    end
+    object Edit5: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 8
+      Position.X = 8.000000000000000000
+      Position.Y = 297.000000000000000000
+    end
+    object Edit4: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      Position.X = 8.000000000000000000
+      Position.Y = 236.000000000000000000
+    end
+    object Edit3: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 4
+      Position.X = 8.000000000000000000
+      Position.Y = 167.000000000000000000
+    end
+    object Edit2: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      Position.X = 8.000000000000000000
+      Position.Y = 104.000000000000000000
+    end
+    object Edit1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Position.X = 8.000000000000000000
+      Position.Y = 41.000000000000000000
+    end
+    object Button1: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 388.000000000000000000
+      Size.Width = 322.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Upisi Vezbu'
+      OnClick = Button1Click
+    end
+    object IzaberiDatumMerenja: TLabel
+      StyledSettings = []
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.FontColor = claBeige
+      Text = 'Ime Vezbe:'
+      TabOrder = 2
+      object ShadowEffect2: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+      object Label1: TLabel
+        StyledSettings = []
+        Position.Y = 63.000000000000000000
+        Size.Width = 89.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Montserrat'
+        TextSettings.FontColor = claBeige
+        Text = 'Tezina'
+        TabOrder = 2
+        object ShadowEffect1: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.200000002980232200
+          Opacity = 0.600000023841857900
+          ShadowColor = claBlack
+        end
+        object Label2: TLabel
+          StyledSettings = []
+          Position.Y = 63.000000000000000000
+          Size.Width = 121.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Montserrat'
+          TextSettings.FontColor = claBeige
+          Text = 'Broj Ponavljanja'
+          TabOrder = 2
+          object ShadowEffect3: TShadowEffect
+            Distance = 3.000000000000000000
+            Direction = 45.000000000000000000
+            Softness = 0.200000002980232200
+            Opacity = 0.600000023841857900
+            ShadowColor = claBlack
+          end
+        end
+      end
+    end
+  end
+  object Layout2: TLayout
+    Position.X = 23.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 337.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object Back: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 41.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = '<--'
+    end
+    object Label5: TLabel
+      StyledSettings = []
+      Position.X = 57.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 280.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claBeige
+      Text = 'Dodaj vezbu'
+      TabOrder = 0
+      object ShadowEffect7: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+  end
+end

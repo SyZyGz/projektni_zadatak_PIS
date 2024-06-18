@@ -43,7 +43,7 @@ object vezbe1: Tvezbe1
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        Text = 'dodaj vezbu'
+        Text = 'Dodaj vezbu'
         OnClick = Button1Click
       end
     end
@@ -108,7 +108,7 @@ object vezbe1: Tvezbe1
         Size.Width = 65.000000000000000000
         Size.Height = 19.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 5
         Text = 'Easy'
         object RadioButton8: TRadioButton
           Position.X = 112.000000000000000000
@@ -160,7 +160,7 @@ object vezbe1: Tvezbe1
         Size.Width = 65.000000000000000000
         Size.Height = 19.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 5
         Text = 'Easy'
         object RadioButton2: TRadioButton
           Position.X = 112.000000000000000000
@@ -212,7 +212,7 @@ object vezbe1: Tvezbe1
         Size.Width = 65.000000000000000000
         Size.Height = 19.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 5
         Text = 'Easy'
         object RadioButton5: TRadioButton
           Position.X = 112.000000000000000000
